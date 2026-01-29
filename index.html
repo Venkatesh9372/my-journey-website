@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkatesh Karnure | Data Analyst</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+	/* Global page spacing */
+          .container {
+          max-width: 1200px;
+          margin: 0 auto;        /* centers content */
+          padding: 0 24px;       /* left & right space */
+       }
+
+	.hero {
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           padding: 80px 0%;
+           background: #f6f9ff;
+        }
+        .hero-content {
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+        }
+       .hero-text {
+          max-width: 600px;
+        }
+
+       .hero-text h1 span {
+         color: #1d2671;
+        }
+
+      .hero-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+       }
+
+      .hero-image img {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        border: 5px solid #1d2671;
+        object-fit: cover;
+      }
+
+      @media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+     }
+      }
+
+
+        body {
+            background-color: #f8f9fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 40px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+	<section class="section">
+        .section {
+            padding: 60px 10%;
+        }
+
+        h2 {
+            color: #1d2671;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .about p {
+            max-width: 900px;
+        }
+	.certificates .card {
+    	    background: #ffffff;
+    	    color: #111827;
+	}
+
+        .skills, .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #c33764;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: #1d2671;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+	.contact {
+            background: #ffffff;
+            color: #111827;
+        }
+
+        .btn:hover {
+            background: #c33764;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1d2671;
+            color: white;
+        }
+
+        @media(max-width: 768px) {
+            header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+    <div class="hero-text">
+        <h1>Hi, I'm <span>Venkatesh Karnure</span></h1>
+
+        <h3>Data Analyst | Turning Data into Insights</h3>
+
+        <p class="location">📍 Pune</p>
+
+        <p class="desc">
+            I analyze data, build machine learning models, and transform
+            raw data into actionable business insights.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="https://drive.google.com/file/d/1_azCj6SenQGBiaQXmNmEAf7wffAatIg6/view?usp=sharing" class="btn primary">View Resume</a>
+            <a href="https://github.com/Venkatesh9372" target="_blank" class="btn outline">GitHub</a>
+            <a href="https://www.linkedin.com/in/venkateshk2003/" target="_blank" class="btn linkedin">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img src="profile.png" alt="Profile Image">
+    </div>
+   </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>
+              Aspiring Data Analyst with strong foundations in Python, SQL, Power BI, and Machine Learning.
+              Experienced in data cleaning, visualization, predictive modeling, and building end-to-end analytics projects.
+              Passionate about transforming raw data into actionable insights.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+    <div class="container">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div class="card">
+            <h3>Programming</h3>
+            <ul>
+                <li>Python</li>
+                <li>SQL</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Data Visualization</h3>
+            <ul>
+		<li>Pandas, NumPy</li>
+                <li>Power BI</li>
+                <li>Matplotlib</li>
+                <li>Seaborn</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Machine Learning</h3>
+            <ul>
+                <li>Regression & Classification</li>
+                <li>ANN Basics</li>
+                <li>Model Evaluation</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Tools</h3>
+            <ul>
+                <li>Excel</li>
+                <li>Git & GitHub</li>
+                <li>Streamlit</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="edu-exp">
+ <div class="container">
+    <h2>Education & Experience</h2>
+
+    <!-- Education -->
+    <div class="timeline">
+        <div class="icon blue">
+            🎓
+        </div>
+
+        <div class="card">
+            <h3>B.Sc. in Computer Science</h3>
+            <a href="#" class="org">Shivaji University, Kolhapur</a>
+            <p class="date">July 2022 – April 2025</p>
+            <p class="grade"><strong>Grade:</strong> A</p>
+        </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="timeline">
+        <div class="icon green">
+            💼
+        </div>
+
+        <div class="card">
+            <h3>Data Science Trainee</h3>
+            <a href="#" class="org">Innomatics Research Labs</a>
+            <p class="date">Nov 2025 – Present</p>
+
+            <ul>
+                <li>EDA & preprocessing using Python & SQL</li>
+                <li>Built interactive Power BI dashboards</li>
+                <li>Worked on real-world business datasets</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section>
+    <div class="container">
+    <h2>Projects</h2>
+    <div class="projects">
+
+        <div class="card">
+    <h3>Telecom Customer Churn Dashboard Analysis(Power BI)</h3>
+
+    <ul>
+        <li>Interactive dashboard with KPIs</li>
+        <li>Used DAX measures</li>
+        <li>Business insights</li>
+    </ul>
+
+    <a href="https://github.com/Venkatesh9372/Telecom-customer-churn-analysis-Dashboard"
+       target="_blank"
+       class="btn">
+       View Project 
+    </a>
+   </div>
+
+
+        <div class="card">
+    <h3>Scraping & Analyzing Restaurant Trends on eazydiner data (Python & EDA)</h3>
+
+    <ul>
+        <li>Analyzed EazyDiner restaurant data using EDA</li>
+        <li>Compared prices, ratings, and discounts across cities</li>
+        <li>Found weak impact of price/discounts on ratings.</li>
+    </ul>
+
+    <a href="https://github.com/Venkatesh9372/EDA-Eazydiner-restaurant-trends-analysis-Python"
+       target="_blank"
+       class="btn">
+       View Project 
+    </a>
+    </div>
+
+        <div class="card">
+    <h3>World Wild Energy Consumption Analysis (SQL)</h3>
+     <ul>
+         <li>Designed interactive dashboards</li>
+         <li>KPIs, trends, and regional insights</li>
+         <li>Used DAX measures</li>
+     </ul>
+
+     <a href="https://github.com/Venkatesh9372/World-Wild-Energy-Consumption-SQL"
+        target="_blank"
+        class="btn">
+        View Project
+     </a>
+
+     </div>
+
+    </div>
+     </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certificates">
+    <div class="container">
+    <h2>Certifications</h2>
+    <div class="skills">
+        <div class="card">TATA Data Visualization Program</div>
+        <div class="card">Python for Data Science</div>
+        <div class="card">Machine Learning Fundamentals</div>
+    </div>
+     </div>
+</section>
+
+
+<!-- CONTACT -->
+<section>
+    <div class="container">
+    <h2>Contact</h2>
+    <p>Email: 
+      <a href="venkateshkarnure19@gmail.com" target="_blank">
+      venkateshkarnure19@gmail.com
+      </a></p>
+    <p>GitHub:
+     <a href="https://github.com/Venkatesh9372" target="_blank">
+      github.com/Venkatesh9372
+    </a>
+    </p>
+
+    <p>LinkedIn: 
+       <a href="https://www.linkedin.com/in/venkateshk2003/" target="_blank">
+       linkedin.com/venkateshk2003/
+       </a></p>
+
+    <a href="https://drive.google.com/file/d/1_azCj6SenQGBiaQXmNmEAf7wffAatIg6/view?usp=sharing" download class="btn">
+    View Resume
+</a>
+ </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Venkatesh Karnure | Data Analyst Portfolio</p>
+    </div>
+</footer>
+
+</body>
+</html>

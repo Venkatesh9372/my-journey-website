@@ -1,0 +1,31 @@
+/* GLOBAL SPACING */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;   /* equal left & right spacing */
+}
+
+/* ALL SECTIONS */
+section {
+    padding: 80px 0;  /* vertical spacing only */
+}
+
+/* HERO */
+.hero {
+    background: #f6f9ff;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* RESPONSIVE HERO */
+@media (max-width: 900px) {
+    .hero .container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}

@@ -4,246 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Venkatesh Karnure | Data Analyst</title>
-
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- DARK MODE TOGGLE -->
-<button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
+<div class="app">
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="container hero-flex">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="brand">VK.</h2>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-    <div class="hero-text">
-      <h1>Venkatesh <span>Karnure</span></h1>
-      <h3>Data Analyst | Python • SQL • Power BI</h3>
+    <button id="themeToggle">🌙</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="panel">
+      <h1>Venkatesh Karnure</h1>
+      <p class="role">Data Analyst • Python • SQL • Power BI</p>
       <p class="location">📍 Pune, India</p>
 
-      <p class="hero-desc">
-        I help businesses make data-driven decisions by transforming raw data
-        into meaningful insights, interactive dashboards, and predictive models.
-      </p>
-
-      <div class="hero-stats">
-        <div>
-          <strong>10+</strong>
-          <span>Projects</span>
-        </div>
-        <div>
-          <strong>1</strong>
-          <span>Internship</span>
-        </div>
-        <div>
-          <strong>3+</strong>
-          <span>Dashboards</span>
-        </div>
+      <div class="metrics">
+        <div><strong>10+</strong><span>Projects</span></div>
+        <div><strong>3+</strong><span>Dashboards</span></div>
+        <div><strong>1</strong><span>Internship</span></div>
       </div>
 
-      <div class="buttons">
-        <a href="https://drive.google.com/file/d/1_azCj6SenQGBiaQXmNmEAf7wffAatIg6/view"
-           target="_blank" class="btn primary">View Resume</a>
-
-        <a href="https://github.com/Venkatesh9372"
-           target="_blank" class="btn secondary">GitHub</a>
-
-        <a href="https://www.linkedin.com/in/venkateshk2003/"
-           target="_blank" class="btn secondary">LinkedIn</a>
+      <div class="links">
+        <a href="https://drive.google.com/file/d/1_azCj6SenQGBiaQXmNmEAf7wffAatIg6/view" target="_blank">Resume</a>
+        <a href="https://github.com/Venkatesh9372" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/venkateshk2003/" target="_blank">LinkedIn</a>
       </div>
-    </div>
+    </section>
 
-    <div class="hero-img">
-      <img src="profile.png" alt="Venkatesh Karnure">
-    </div>
+    <!-- SKILLS -->
+    <section id="skills" class="panel">
+      <h2>Skill Stack</h2>
 
-  </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
-<section class="section">
-  <div class="container">
-    <h2>About Me</h2>
-
-    <div class="about-grid">
-      <div>
-        <h4>Background</h4>
-        <p>
-          I am a Data Analyst with hands-on experience working on real-world
-          business datasets using Python, SQL, and Power BI.
-        </p>
+      <div class="skill-row">
+        <span>Python</span><span>SQL</span><span>Power BI</span>
       </div>
 
-      <div>
-        <h4>What I Do</h4>
-        <p>
-          Data cleaning, exploratory data analysis, dashboard creation,
-          and predictive modeling to deliver actionable insights.
-        </p>
+      <div class="skill-row">
+        <span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span>
       </div>
 
-      <div>
-        <h4>Career Focus</h4>
-        <p>
-          Actively seeking internships and entry-level Data Analyst roles
-          where I can solve real business problems using data.
-        </p>
+      <div class="skill-row">
+        <span>Regression</span><span>Classification</span><span>ANN Basics</span>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ================= SKILLS ================= -->
-<section class="section bg">
-  <div class="container">
-    <h2>Skill Stack</h2>
-
-    <div class="skill-block">
-      <h4>Core Analytics</h4>
-      <div class="tags">
-        <span>Python</span>
-        <span>SQL</span>
-        <span>Power BI</span>
+      <div class="skill-row">
+        <span>Excel</span><span>Git</span><span>GitHub</span><span>Streamlit</span>
       </div>
-    </div>
+    </section>
 
-    <div class="skill-block">
-      <h4>Data Analysis & Visualization</h4>
-      <div class="tags">
-        <span>Pandas</span>
-        <span>NumPy</span>
-        <span>Matplotlib</span>
-        <span>Seaborn</span>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="panel">
+      <h2>Education & Experience</h2>
+
+      <div class="block">
+        <h3>B.Sc. Computer Science</h3>
+        <p>Shivaji University, Kolhapur • 2022–2025 • Grade: A</p>
       </div>
-    </div>
 
-    <div class="skill-block">
-      <h4>Machine Learning</h4>
-      <div class="tags">
-        <span>Regression</span>
-        <span>Classification</span>
-        <span>ANN Basics</span>
-      </div>
-    </div>
-
-    <div class="skill-block">
-      <h4>Tools</h4>
-      <div class="tags">
-        <span>Excel</span>
-        <span>Git</span>
-        <span>GitHub</span>
-        <span>Streamlit</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= EDUCATION & EXPERIENCE ================= -->
-<section class="section">
-  <div class="container">
-    <h2>Education & Experience</h2>
-
-    <div class="timeline-card">
-      <h3>B.Sc. in Computer Science</h3>
-      <p class="muted">
-        Shivaji University, Kolhapur • 2022 – 2025 • Grade: A
-      </p>
-    </div>
-
-    <div class="timeline-card">
-      <h3>Data Science Trainee</h3>
-      <p class="muted">Innomatics Research Labs</p>
-      <ul>
-        <li>Performed data cleaning and EDA using Python & SQL</li>
-        <li>Built Power BI dashboards with KPIs and trends</li>
-        <li>Worked on real-world business datasets</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PROJECTS ================= -->
-<section class="section bg">
-  <div class="container">
-    <h2>Projects</h2>
-
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <h3>Telecom Customer Churn Analysis</h3>
-        <p><strong>Tool:</strong> Power BI</p>
+      <div class="block">
+        <h3>Data Science Trainee</h3>
+        <p>Innomatics Research Labs</p>
         <ul>
-          <li>Designed KPI-driven interactive dashboards</li>
-          <li>Identified high-risk churn segments</li>
+          <li>EDA & data cleaning using Python & SQL</li>
+          <li>Power BI dashboards with KPIs</li>
+          <li>Worked on real business datasets</li>
         </ul>
-        <a href="https://github.com/Venkatesh9372/Telecom-customer-churn-analysis-Dashboard"
-           target="_blank">View Project →</a>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="panel">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Telecom Customer Churn</h3>
+        <p>Power BI dashboard identifying high-risk churn segments.</p>
+        <a href="https://github.com/Venkatesh9372/Telecom-customer-churn-analysis-Dashboard" target="_blank">View →</a>
       </div>
 
-      <div class="project-card">
+      <div class="project">
         <h3>EazyDiner Restaurant Analysis</h3>
-        <p><strong>Tool:</strong> Python</p>
-        <ul>
-          <li>Scraped and analyzed restaurant data</li>
-          <li>Compared pricing, ratings, and discounts</li>
-        </ul>
-        <a href="https://github.com/Venkatesh9372/EDA-Eazydiner-restaurant-trends-analysis-Python"
-           target="_blank">View Project →</a>
+        <p>Python EDA on pricing, ratings, and discounts.</p>
+        <a href="https://github.com/Venkatesh9372/EDA-Eazydiner-restaurant-trends-analysis-Python" target="_blank">View →</a>
       </div>
 
-      <div class="project-card">
-        <h3>World Energy Consumption Analysis</h3>
-        <p><strong>Tool:</strong> SQL</p>
-        <ul>
-          <li>Analyzed global energy consumption trends</li>
-          <li>Generated regional insights using SQL queries</li>
-        </ul>
-        <a href="https://github.com/Venkatesh9372/World-Wild-Energy-Consumption-SQL"
-           target="_blank">View Project →</a>
+      <div class="project">
+        <h3>World Energy Consumption</h3>
+        <p>SQL analysis on global energy trends.</p>
+        <a href="https://github.com/Venkatesh9372/World-Wild-Energy-Consumption-SQL" target="_blank">View →</a>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <!-- CONTACT -->
+    <section id="contact" class="panel">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:venkateshkarnure19@gmail.com">venkateshkarnure19@gmail.com</a></p>
+      <p>Open to internships & entry-level Data Analyst roles.</p>
+    </section>
 
-<!-- ================= CERTIFICATIONS ================= -->
-<section class="section">
-  <div class="container">
-    <h2>Certifications</h2>
+  </main>
+</div>
 
-    <ul class="cert-list">
-      <li>TATA Data Visualization – Forage</li>
-      <li>Python for Data Science – Innomatics</li>
-      <li>Machine Learning Fundamentals</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section class="section bg">
-  <div class="container contact">
-    <h2>Contact</h2>
-    <p>
-      Email:
-      <a href="mailto:venkateshkarnure19@gmail.com">
-        venkateshkarnure19@gmail.com
-      </a>
-    </p>
-    <p>Open to internships and entry-level Data Analyst roles.</p>
-  </div>
-</section>
-
-<footer class="footer">
-  <p>© 2026 Venkatesh Karnure • Data Analyst</p>
-</footer>
-
-<!-- ================= SCRIPT ================= -->
-<script>
-  const toggle = document.getElementById("themeToggle");
-  toggle.onclick = () => document.body.classList.toggle("dark");
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>

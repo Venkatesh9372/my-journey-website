@@ -1,124 +1,180 @@
-:root {
-  --bg: #0f172a;
-  --panel: #020617;
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --accent: #38bdf8;
-}
-
-body.light {
-  --bg: #f8fafc;
-  --panel: #ffffff;
-  --text: #0f172a;
-  --muted: #475569;
-  --accent: #2563eb;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.7;
 }
 
-.app {
+/* HERO */
+.hero {
   display: flex;
-  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 10%;
+  gap: 80px;
 }
 
-/* SIDEBAR */
-.sidebar {
-  width: 220px;
-  background: var(--panel);
-  padding: 30px 20px;
+.hero-left h1 {
+  font-size: 3rem;
+}
+
+.hero-left h1 span {
+  color: #2563eb;
+}
+
+.hero-left h3 {
+  margin: 12px 0;
+  font-weight: 500;
+}
+
+.tagline {
+  max-width: 520px;
+  margin-bottom: 28px;
+  color: #475569;
+}
+
+.cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.ghost {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+}
+
+/* HERO RIGHT */
+.hero-right {
+  position: relative;
+  text-align: center;
+}
+
+.profile {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #2563eb;
+}
+
+.insight-card {
+  background: #ffffff;
+  padding: 10px 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 10%;
+}
+
+.section.bg {
+  background: #f1f5f9;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.about-grid div {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* SKILLS */
+.skill-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  margin-bottom: 18px;
+}
+
+.skill-row span {
+  color: #475569;
+}
+
+/* TIMELINE */
+.timeline {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.brand {
-  font-size: 1.8rem;
-  color: var(--accent);
+.node {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.sidebar nav a {
-  display: block;
-  margin-bottom: 14px;
-  text-decoration: none;
-  color: var(--muted);
+.node.highlight {
+  border-left: 6px solid #2563eb;
 }
 
-.sidebar nav a:hover {
-  color: var(--accent);
-}
-
-#themeToggle {
-  margin-top: auto;
-  border: none;
-  background: none;
-  color: var(--text);
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* MAIN */
-.main {
-  flex: 1;
-  padding: 40px;
-}
-
-.panel {
-  margin-bottom: 60px;
-  max-width: 900px;
-}
-
-.role {
-  color: var(--accent);
-}
-
-.metrics {
-  display: flex;
-  gap: 40px;
-  margin: 24px 0;
-}
-
-.metrics strong {
-  font-size: 2rem;
-}
-
-.links a {
-  margin-right: 16px;
-  color: var(--accent);
-  text-decoration: none;
-}
-
-/* SKILLS */
-.skill-row {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
-}
-
-.skill-row span {
-  border: 1px solid var(--accent);
-  padding: 6px 14px;
-  border-radius: 6px;
-}
-
-/* BLOCKS */
-.block, .project {
-  border-left: 3px solid var(--accent);
-  padding-left: 16px;
-  margin-bottom: 24px;
+/* PROJECTS */
+.project {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
 .project a {
-  color: var(--accent);
+  color: #2563eb;
   text-decoration: none;
+  font-weight: 500;
+}
+
+/* CONTACT */
+.contact a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 }

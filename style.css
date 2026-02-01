@@ -1,4 +1,4 @@
-/* ===== Global dark theme ===== */
+/* Base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,74 +8,55 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  color: #ffffff;
-  background-color: #000000; /* full-page dark background */
+  color: #222;
+  background-color: #fafbff;
 }
 
-/* All sections share dark background */
+/* Sections */
 section {
   scroll-margin-top: 80px;
-  background-color: #000000;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #1f3c88;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #000000 !important;
-  border-bottom: 1px solid #181818;
-}
-
-.navbar .navbar-brand,
-.navbar .nav-link {
-  color: #ffffff !important;
-}
-
-.navbar .nav-link:hover {
-  color: #ffbd39 !important;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 /* Hero */
 .hero-section {
   min-height: 100vh;
   padding-top: 90px;
-  background-color: #000000;
+  background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
 }
 
 .hero-section .lead {
   max-width: 600px;
 }
 
-/* Profile image circle */
+/* Profile image */
 .profile-img-wrapper {
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ffbd39, #f95f53);
+  background: linear-gradient(135deg, #1f3c88, #f95f53);
   padding: 4px;
 }
 
-/* Headings */
-.section-title {
-  font-weight: 700;
-  color: #ffffff;
-}
-
-/* Override Bootstrap light backgrounds if used */
-.bg-light {
-  background-color: #000000 !important;
-}
-
-/* ===== Unified card design (Skills, Edu, Projects, Certs, Contact) ===== */
+/* Cards */
 .skill-card,
 .edu-card,
 .project-card,
 .cert-card,
 .contact-card {
   border-radius: 18px;
-  border: 1px solid #222222;
-  background-color: #121212;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  border: 1px solid #edf1ff;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  color: #ffffff;
 }
 
 .skill-card:hover,
@@ -84,99 +65,41 @@ section {
 .cert-card:hover,
 .contact-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
 }
 
-/* Text inside any card */
-.card-body,
-.card ul,
-.card p,
-.card h5,
-.card h4 {
-  color: #ffffff;
-}
-
+/* Lists inside cards */
 .card ul {
   padding-left: 1.2rem;
 }
 
-/* ===== Contact section circular icons ===== */
-.contact-section {
-  background-color: #000000;
-}
-
-.contact-icon {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background-color: #181818;
-  margin: 0 auto 24px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-icon i {
-  font-size: 40px;
-  color: #ffbd39;
-}
-
-.contact-label {
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.contact-value {
-  margin: 0;
-  color: #cccccc;
-  font-size: 0.95rem;
-}
-
-.contact-value a {
-  color: #cccccc;
-  text-decoration: none;
-}
-
-.contact-value a:hover {
-  color: #ffbd39;
-}
-
-/* Make muted text visible on dark */
-.text-muted {
-  color: #b0b0b0 !important;
-}
-
 /* Buttons */
 .btn-primary {
-  background-color: #ffbd39;
-  border-color: #ffbd39;
-  color: #000000;
+  background-color: #1f3c88;
+  border-color: #1f3c88;
 }
 
 .btn-primary:hover {
-  background-color: #e4a72f;
-  border-color: #e4a72f;
+  background-color: #182f6a;
+  border-color: #182f6a;
 }
 
-.btn-outline-primary {
-  border-color: #ffbd39;
-  color: #ffbd39;
+/* Contact */
+.contact-card a {
+  text-decoration: none;
+  color: #1f3c88;
 }
 
-.btn-outline-primary:hover {
-  background-color: #ffbd39;
-  color: #000000;
+.contact-card a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
 footer {
-  background-color: #000000;
-  color: #777777;
+  background-color: #ffffff;
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 767px) {
   .hero-section {
     text-align: center;

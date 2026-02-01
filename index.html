@@ -1,249 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Venkatesh Karnure | Data Analyst</title>
 
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">Venkatesh Karnure</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navContent"
+        aria-controls="navContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<body>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<!-- DARK MODE TOGGLE -->
-<button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
+  <!-- HERO -->
+  <section id="home" class="hero-section d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <p class="text-primary fw-semibold mb-2">Hi, I'm</p>
+          <h1 class="display-4 fw-bold mb-2">Venkatesh Karnure</h1>
+          <h3 class="text-secondary mb-3">Data Analyst | Turning Data into Insights</h3>
+          <p class="lead mb-3">
+            Pune · I analyze data, build machine learning models, and transform raw data into actionable business insights.
+          </p>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="container hero-flex">
-
-    <div class="hero-text">
-      <h1>Venkatesh <span>Karnure</span></h1>
-      <h3>Data Analyst | Python • SQL • Power BI</h3>
-      <p class="location">📍 Pune, India</p>
-
-      <p class="hero-desc">
-        I help businesses make data-driven decisions by transforming raw data
-        into meaningful insights, interactive dashboards, and predictive models.
-      </p>
-
-      <div class="hero-stats">
-        <div>
-          <strong>10+</strong>
-          <span>Projects</span>
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <!-- Put your resume link here -->
+            <a href="#" class="btn btn-primary me-2 mb-2" target="_blank">View Resume</a>
+            <a href="https://github.com/Venkatesh9372" class="btn btn-outline-primary me-2 mb-2" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/venkateshk2003/" class="btn btn-outline-secondary mb-2" target="_blank">LinkedIn</a>
+          </div>
         </div>
-        <div>
-          <strong>1</strong>
-          <span>Internship</span>
+        <div class="col-lg-5 text-center">
+          <!-- Replace src with your real image if you have one -->
+          <div class="profile-img-wrapper mx-auto">
+            <img
+              src="https://via.placeholder.com/280x280/ffffff/1f3c88?text=Profile+Image"
+              alt="Venkatesh Karnure"
+              class="img-fluid rounded-circle shadow-sm"
+            />
+          </div>
         </div>
-        <div>
-          <strong>3+</strong>
-          <span>Dashboards</span>
-        </div>
-      </div>
-
-      <div class="buttons">
-        <a href="https://drive.google.com/file/d/1_azCj6SenQGBiaQXmNmEAf7wffAatIg6/view"
-           target="_blank" class="btn primary">View Resume</a>
-
-        <a href="https://github.com/Venkatesh9372"
-           target="_blank" class="btn secondary">GitHub</a>
-
-        <a href="https://www.linkedin.com/in/venkateshk2003/"
-           target="_blank" class="btn secondary">LinkedIn</a>
       </div>
     </div>
+  </section>
 
-    <div class="hero-img">
-      <img src="profile.png" alt="Venkatesh Karnure">
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
-<section class="section">
-  <div class="container">
-    <h2>About Me</h2>
-
-    <div class="about-grid">
-      <div>
-        <h4>Background</h4>
-        <p>
-          I am a Data Analyst with hands-on experience working on real-world
-          business datasets using Python, SQL, and Power BI.
-        </p>
-      </div>
-
-      <div>
-        <h4>What I Do</h4>
-        <p>
-          Data cleaning, exploratory data analysis, dashboard creation,
-          and predictive modeling to deliver actionable insights.
-        </p>
-      </div>
-
-      <div>
-        <h4>Career Focus</h4>
-        <p>
-          Actively seeking internships and entry-level Data Analyst roles
-          where I can solve real business problems using data.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SKILLS ================= -->
-<section class="section bg">
-  <div class="container">
-    <h2>Skill Stack</h2>
-
-    <div class="skill-block">
-      <h4>Core Analytics</h4>
-      <div class="tags">
-        <span>Python</span>
-        <span>SQL</span>
-        <span>Power BI</span>
-      </div>
-    </div>
-
-    <div class="skill-block">
-      <h4>Data Analysis & Visualization</h4>
-      <div class="tags">
-        <span>Pandas</span>
-        <span>NumPy</span>
-        <span>Matplotlib</span>
-        <span>Seaborn</span>
-      </div>
-    </div>
-
-    <div class="skill-block">
-      <h4>Machine Learning</h4>
-      <div class="tags">
-        <span>Regression</span>
-        <span>Classification</span>
-        <span>ANN Basics</span>
-      </div>
-    </div>
-
-    <div class="skill-block">
-      <h4>Tools</h4>
-      <div class="tags">
-        <span>Excel</span>
-        <span>Git</span>
-        <span>GitHub</span>
-        <span>Streamlit</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= EDUCATION & EXPERIENCE ================= -->
-<section class="section">
-  <div class="container">
-    <h2>Education & Experience</h2>
-
-    <div class="timeline-card">
-      <h3>B.Sc. in Computer Science</h3>
-      <p class="muted">
-        Shivaji University, Kolhapur • 2022 – 2025 • Grade: A
+  <!-- ABOUT -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title mb-3 text-center">About Me</h2>
+      <p class="text-center text-muted mb-5">
+        Aspiring Data Analyst with strong foundations in Python, SQL, Power BI, and Machine Learning. Experienced in data cleaning,
+        visualization, predictive modeling, and building end-to-end analytics projects. Passionate about transforming raw data into
+        actionable insights.
       </p>
     </div>
+  </section>
 
-    <div class="timeline-card">
-      <h3>Data Science Trainee</h3>
-      <p class="muted">Innomatics Research Labs</p>
-      <ul>
-        <li>Performed data cleaning and EDA using Python & SQL</li>
-        <li>Built Power BI dashboards with KPIs and trends</li>
-        <li>Worked on real-world business datasets</li>
-      </ul>
+  <!-- SKILLS -->
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h2 class="section-title mb-4 text-center">Skills</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card skill-card h-100">
+            <div class="card-body">
+              <h5 class="card-title mb-3">Programming</h5>
+              <ul class="list-unstyled mb-0">
+                <li>Python</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card skill-card h-100">
+            <div class="card-body">
+              <h5 class="card-title mb-3">Data Visualization</h5>
+              <ul class="list-unstyled mb-0">
+                <li>Pandas, NumPy</li>
+                <li>Power BI</li>
+                <li>Matplotlib</li>
+                <li>Seaborn</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card skill-card h-100">
+            <div class="card-body">
+              <h5 class="card-title mb-3">Machine Learning</h5>
+              <ul class="list-unstyled mb-0">
+                <li>Regression & Classification</li>
+                <li>ANN Basics</li>
+                <li>Model Evaluation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card skill-card h-100">
+            <div class="card-body">
+              <h5 class="card-title mb-3">Tools</h5>
+              <ul class="list-unstyled mb-0">
+                <li>Excel</li>
+                <li>Git & GitHub</li>
+                <li>Streamlit</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= PROJECTS ================= -->
-<section class="section bg">
-  <div class="container">
-    <h2>Projects</h2>
+  <!-- EDUCATION & EXPERIENCE -->
+  <section id="education" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title mb-4 text-center">Education & Experience</h2>
+      <div class="row g-4">
+        <!-- Education -->
+        <div class="col-md-6">
+          <div class="card edu-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">B.Sc. in Computer Science</h5>
+              <p class="mb-1 fw-semibold">Shivaji University, Kolhapur</p>
+              <p class="text-muted mb-1">July 2022 – April 2025</p>
+              <p class="text-muted mb-0">Grade: A</p>
+            </div>
+          </div>
+        </div>
 
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <h3>Telecom Customer Churn Analysis</h3>
-        <p><strong>Tool:</strong> Power BI</p>
-        <ul>
-          <li>Designed KPI-driven interactive dashboards</li>
-          <li>Identified high-risk churn segments</li>
-        </ul>
-        <a href="https://github.com/Venkatesh9372/Telecom-customer-churn-analysis-Dashboard"
-           target="_blank">View Project →</a>
+        <!-- Experience -->
+        <div class="col-md-6" id="experience">
+          <div class="card edu-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Data Science Trainee</h5>
+              <p class="mb-1 fw-semibold">Innomatics Research Labs</p>
+              <p class="text-muted mb-2">Nov 2025 – Present</p>
+              <ul class="mb-0">
+                <li>EDA & preprocessing using Python & SQL</li>
+                <li>Built interactive Power BI dashboards</li>
+                <li>Worked on real-world business datasets</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="project-card">
-        <h3>EazyDiner Restaurant Analysis</h3>
-        <p><strong>Tool:</strong> Python</p>
-        <ul>
-          <li>Scraped and analyzed restaurant data</li>
-          <li>Compared pricing, ratings, and discounts</li>
-        </ul>
-        <a href="https://github.com/Venkatesh9372/EDA-Eazydiner-restaurant-trends-analysis-Python"
-           target="_blank">View Project →</a>
-      </div>
-
-      <div class="project-card">
-        <h3>World Energy Consumption Analysis</h3>
-        <p><strong>Tool:</strong> SQL</p>
-        <ul>
-          <li>Analyzed global energy consumption trends</li>
-          <li>Generated regional insights using SQL queries</li>
-        </ul>
-        <a href="https://github.com/Venkatesh9372/World-Wild-Energy-Consumption-SQL"
-           target="_blank">View Project →</a>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= CERTIFICATIONS ================= -->
-<section class="section">
-  <div class="container">
-    <h2>Certifications</h2>
+  <!-- PROJECTS -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="section-title mb-4 text-center">Projects</h2>
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-4">
+          <div class="card project-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Telecom Customer Churn Dashboard Analysis (Power BI)</h5>
+              <ul>
+                <li>Interactive dashboard with KPIs</li>
+                <li>Used DAX measures</li>
+                <li>Delivered business insights</li>
+              </ul>
+              <!-- Put project link if available -->
+              <a href="#" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
 
-    <ul class="cert-list">
-      <li>TATA Data Visualization – Forage</li>
-      <li>Python for Data Science – Innomatics</li>
-      <li>Machine Learning Fundamentals</li>
-    </ul>
-  </div>
-</section>
+        <!-- Project 2 -->
+        <div class="col-md-4">
+          <div class="card project-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Scraping & Analyzing Restaurant Trends (EazyDiner Data)</h5>
+              <ul>
+                <li>Analyzed EazyDiner restaurant data using EDA</li>
+                <li>Compared prices, ratings, and discounts across cities</li>
+                <li>Found weak impact of price/discounts on ratings</li>
+              </ul>
+              <a href="#" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
 
-<!-- ================= CONTACT ================= -->
-<section class="section bg">
-  <div class="container contact">
-    <h2>Contact</h2>
-    <p>
-      Email:
-      <a href="mailto:venkateshkarnure19@gmail.com">
-        venkateshkarnure19@gmail.com
-      </a>
-    </p>
-    <p>Open to internships and entry-level Data Analyst roles.</p>
-  </div>
-</section>
+        <!-- Project 3 -->
+        <div class="col-md-4">
+          <div class="card project-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">World Wild Energy Consumption Analysis (SQL)</h5>
+              <ul>
+                <li>Designed interactive dashboards</li>
+                <li>Built KPIs, trends, and regional insights</li>
+                <li>Used DAX measures</li>
+              </ul>
+              <a href="#" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer class="footer">
-  <p>© 2026 Venkatesh Karnure • Data Analyst</p>
-</footer>
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title mb-4 text-center">Certifications</h2>
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-4">
+          <div class="card cert-card h-100">
+            <div class="card-body text-center">
+              <p class="mb-0">TATA Data Visualization Program</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card cert-card h-100">
+            <div class="card-body text-center">
+              <p class="mb-0">Python for Data Science</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card cert-card h-100">
+            <div class="card-body text-center">
+              <p class="mb-0">Machine Learning Fundamentals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- ================= SCRIPT ================= -->
-<script>
-  const toggle = document.getElementById("themeToggle");
-  toggle.onclick = () => document.body.classList.toggle("dark");
-</script>
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="section-title mb-4 text-center">Contact</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="card contact-card">
+            <div class="card-body text-center">
+              <p class="mb-2">
+                <strong>Email:</strong>
+                <a href="mailto:venkateshkarnure19@gmail.com">venkateshkarnure19@gmail.com</a>
+              </p>
+              <p class="mb-2">
+                <strong>GitHub:</strong>
+                <a href="https://github.com/Venkatesh9372" target="_blank">github.com/Venkatesh9372</a>
+              </p>
+              <p class="mb-3">
+                <strong>LinkedIn:</strong>
+                <a href="https://linkedin.com/in/venkateshk2003/" target="_blank">linkedin.com/in/venkateshk2003/</a>
+              </p>
+              <!-- Resume link -->
+              <a href="#" class="btn btn-primary" target="_blank">View Resume</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
+  <footer class="py-3 border-top bg-white">
+    <div class="container text-center small text-muted">
+      © 2026 Venkatesh Karnure | Data Analyst Portfolio
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

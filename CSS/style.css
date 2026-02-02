@@ -6,11 +6,12 @@
   --bg-light: #ffffff;
   --bg-soft: #f1f5f9;
   --text: #0f172a;
-  --muted: #475569;
+  --muted: #64748b;
   --primary: #2563eb;
   --border: #e5e7eb;
 }
 
+/* DARK MODE */
 body.dark {
   --bg: #020617;
   --bg-light: #020617;
@@ -42,6 +43,7 @@ section {
 .section-title {
   font-weight: 700;
   letter-spacing: -0.5px;
+  color: var(--text);
 }
 
 /* ===============================
@@ -49,10 +51,11 @@ section {
 ================================ */
 .navbar {
   background: var(--bg-light) !important;
-  transition: background 0.3s ease;
+  border-bottom: 1px solid var(--border);
 }
 
 .navbar-brand {
+  font-weight: 700;
   color: var(--text) !important;
 }
 
@@ -62,33 +65,70 @@ section {
   margin-left: 12px;
 }
 
-.nav-link.active,
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--primary) !important;
 }
 
 /* ===============================
-   HERO
+   HERO SECTION
 ================================ */
 .hero-section {
   min-height: 100vh;
+  display: flex;
+  align-items: center;
   background: linear-gradient(
     135deg,
     var(--bg-light),
     var(--bg-soft)
   );
+  padding-top: 80px;
 }
 
+/* NAME & TEXT */
 .hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8px;
   color: var(--text);
 }
 
 .hero-section h3 {
+  font-size: 1.35rem;
   font-weight: 500;
+  margin-bottom: 18px;
+  color: var(--muted);
 }
 
+.hero-section p.lead {
+  font-size: 1.05rem;
+  max-width: 540px;
+  color: var(--muted);
+}
+
+/* HERO METRICS */
+.hero-section h4 {
+  font-size: 1.6rem;
+}
+
+/* ===============================
+   PROFILE IMAGE (CRYSTAL CLEAR)
+================================ */
 .hero-section img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #ffffff;
+
   border: 6px solid var(--primary);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.18),
+    0 0 0 14px rgba(37,99,235,0.08);
+
+  filter: contrast(1.08) saturate(1.12);
   animation: float 4s ease-in-out infinite;
 }
 
@@ -108,13 +148,13 @@ section {
 .card {
   background: var(--bg-light);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 18px;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  box-shadow: 0 25px 55px rgba(0,0,0,0.15);
 }
 
 .skill-card h5,
@@ -126,7 +166,7 @@ section {
    PROJECT IMAGES
 ================================ */
 .project-card img {
-  border-radius: 12px;
+  border-radius: 14px;
   transition: transform 0.4s ease;
 }
 
@@ -139,7 +179,7 @@ section {
 ================================ */
 #certifications p {
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 /* ===============================
@@ -172,7 +212,7 @@ section,
 .card {
   opacity: 0;
   transform: translateY(40px);
-  animation: reveal 0.8s ease forwards;
+  animation: reveal 0.9s ease forwards;
 }
 
 @keyframes reveal {
@@ -202,10 +242,31 @@ section,
 }
 
 /* ===============================
-   RESPONSIVE
+   RESPONSIVE FIXES
 ================================ */
+@media (max-width: 992px) {
+  .hero-section {
+    padding-top: 120px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-section img {
+    width: 220px;
+    height: 220px;
+    margin-top: 20px;
+  }
+
+  .hero-section p.lead {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

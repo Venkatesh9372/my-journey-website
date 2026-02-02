@@ -9,6 +9,7 @@
   --muted: #64748b;
   --primary: #2563eb;
   --border: #e5e7eb;
+  --underline: #c9b458;
 }
 
 /* DARK MODE */
@@ -20,6 +21,7 @@ body.dark {
   --muted: #94a3b8;
   --primary: #60a5fa;
   --border: #1e293b;
+  --underline: #facc15;
 }
 
 /* ===============================
@@ -47,7 +49,7 @@ section {
 }
 
 /* ===============================
-   NAVBAR (CUSTOM)
+   NAVBAR
 ================================ */
 .navbar {
   background: var(--bg-light) !important;
@@ -77,21 +79,16 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(
-    135deg,
-    var(--bg-light),
-    var(--bg-soft)
-  );
+  background: linear-gradient(135deg, var(--bg-light), var(--bg-soft));
   padding-top: 80px;
 }
 
-/* NAME & TEXT */
+/* Hero Text */
 .hero-section h1 {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 8px;
-  color: var(--text);
 }
 
 .hero-section h3 {
@@ -107,13 +104,8 @@ section {
   color: var(--muted);
 }
 
-/* HERO METRICS */
-.hero-section h4 {
-  font-size: 1.6rem;
-}
-
 /* ===============================
-   PROFILE IMAGE (CRYSTAL CLEAR)
+   PROFILE IMAGE
 ================================ */
 .hero-section img {
   width: 280px;
@@ -121,25 +113,57 @@ section {
   object-fit: cover;
   border-radius: 50%;
   background: #ffffff;
-
   border: 6px solid var(--primary);
-
   box-shadow:
     0 20px 40px rgba(0,0,0,0.18),
     0 0 0 14px rgba(37,99,235,0.08);
-
   filter: contrast(1.08) saturate(1.12);
   animation: float 4s ease-in-out infinite;
 }
 
-/* FLOAT ANIMATION */
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===============================
+   ICON + UNDERLINE TITLE
+================================ */
+.section-title.underline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 18px;
+}
+
+.section-icon {
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+/* Underline */
+.section-title.underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--underline),
+    transparent
+  );
+  transition: width 0.8s ease;
+}
+
+/* Visible animation */
+.section-title.underline.show::after {
+  width: 160px;
 }
 
 /* ===============================
@@ -157,11 +181,6 @@ section {
   box-shadow: 0 25px 55px rgba(0,0,0,0.15);
 }
 
-.skill-card h5,
-.project-card h5 {
-  font-weight: 600;
-}
-
 /* ===============================
    PROJECT IMAGES
 ================================ */
@@ -175,11 +194,65 @@ section {
 }
 
 /* ===============================
-   CERTIFICATIONS
+   TIMELINE EXPERIENCE
 ================================ */
-#certifications p {
-  font-weight: 500;
-  margin-bottom: 10px;
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(37,99,235,0.15);
+}
+
+.timeline-content {
+  background: var(--bg-light);
+  padding: 20px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateX(6px);
+}
+
+.timeline-content h5 {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.timeline-content span {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.timeline-content ul {
+  margin-top: 10px;
 }
 
 /* ===============================
@@ -206,7 +279,7 @@ footer {
 }
 
 /* ===============================
-   SCROLL REVEAL ANIMATION
+   SCROLL REVEAL
 ================================ */
 section,
 .card {
@@ -223,7 +296,7 @@ section,
 }
 
 /* ===============================
-   DARK MODE TOGGLE BUTTON
+   DARK MODE TOGGLE
 ================================ */
 #themeToggle {
   position: fixed;
@@ -242,17 +315,12 @@ section,
 }
 
 /* ===============================
-   RESPONSIVE FIXES
+   RESPONSIVE
 ================================ */
-@media (max-width: 992px) {
-  .hero-section {
-    padding-top: 120px;
-  }
-}
-
 @media (max-width: 768px) {
   .hero-section {
     text-align: center;
+    padding-top: 120px;
   }
 
   .hero-section h1 {

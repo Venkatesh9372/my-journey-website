@@ -86,7 +86,7 @@ contactForm.addEventListener("submit", function (e) {
 
   emailjs.sendForm(
     "service_93ptkeb",     // ✅ your service ID
-    "YOUR_TEMPLATE_ID",    // 🔴 replace
+    "template_a4991zd",    // 🔴 replace
     this
   )
   .then(() => {

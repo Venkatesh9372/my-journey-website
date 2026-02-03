@@ -4,13 +4,11 @@
 const toggle = document.getElementById("themeToggle");
 const body = document.body;
 
-// Load saved theme
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
   toggle.innerHTML = "☀️";
 }
 
-// Toggle theme
 toggle.addEventListener("click", () => {
   body.classList.toggle("dark");
 
@@ -24,7 +22,7 @@ toggle.addEventListener("click", () => {
 });
 
 /* ===============================
-   SCROLL REVEAL (ON SCROLL, NOT LOAD)
+   SCROLL REVEAL
 ================================ */
 const revealElements = document.querySelectorAll("section, .card");
 
@@ -33,7 +31,6 @@ const revealOnScroll = () => {
 
   revealElements.forEach(el => {
     const elementTop = el.getBoundingClientRect().top;
-
     if (elementTop < windowHeight - 100) {
       el.classList.add("revealed");
     }
@@ -43,14 +40,8 @@ const revealOnScroll = () => {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
-document.querySelector(".contact-form").addEventListener("submit", e => {
-  e.preventDefault();
-  alert("Thank you! Your message has been sent.");
-});
-
-
 /* ===============================
-   NAVBAR ACTIVE LINK ON SCROLL
+   NAVBAR ACTIVE LINK
 ================================ */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link");
@@ -72,5 +63,41 @@ window.addEventListener("scroll", () => {
     if (link.getAttribute("href") === `#${current}`) {
       link.classList.add("active");
     }
+  });
+});
+
+/* ===============================
+   EMAILJS CONTACT FORM
+================================ */
+(function () {
+  emailjs.init("H9M-u9_E2OCZPDsqp"); // 🔴 replace
+})();
+
+const contactForm = document.getElementById("contact-form");
+const statusMsg = document.getElementById("form-status");
+const sendBtn = document.querySelector(".send-btn");
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  statusMsg.textContent = "Sending message...";
+  statusMsg.className = "";
+  sendBtn.classList.add("loading");
+
+  emailjs.sendForm(
+    "service_93ptkeb",     // ✅ your service ID
+    "YOUR_TEMPLATE_ID",    // 🔴 replace
+    this
+  )
+  .then(() => {
+    statusMsg.textContent = "✅ Message sent successfully!";
+    statusMsg.className = "success";
+    contactForm.reset();
+    sendBtn.classList.remove("loading");
+  })
+  .catch(() => {
+    statusMsg.textContent = "❌ Failed to send message. Try again!";
+    statusMsg.className = "error";
+    sendBtn.classList.remove("loading");
   });
 });

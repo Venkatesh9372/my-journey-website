@@ -43,6 +43,12 @@ const revealOnScroll = () => {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
+document.querySelector(".contact-form").addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Thank you! Your message has been sent.");
+});
+
+
 /* ===============================
    NAVBAR ACTIVE LINK ON SCROLL
 ================================ */

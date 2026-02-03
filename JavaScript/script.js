@@ -1,15 +1,14 @@
-// Animate section titles when visible
-const titles = document.querySelectorAll(".section-title");
+const toggle = document.getElementById("themeToggle");
+const body = document.body;
 
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark");
+}
 
-titles.forEach(title => observer.observe(title));
+toggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    body.classList.contains("dark") ? "dark" : "light"
+  );
+});

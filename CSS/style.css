@@ -36,14 +36,36 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-section {
-  scroll-margin-top: 90px;
+section,
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
 }
 
-.section-title {
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  color: var(--text);
+section.revealed,
+.card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: var(--primary);
+  transition: width 0.35s ease;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  width: 100%;
 }
 
 /* ===============================

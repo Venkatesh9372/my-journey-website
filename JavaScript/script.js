@@ -1,111 +1,82 @@
-/* ===============================
-   DARK MODE TOGGLE
-================================ */
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* THEME TOGGLE */
   const toggle = document.getElementById("themeToggle");
   const body = document.body;
 
-  if (!toggle) {
-    console.error("Theme toggle button not found!");
-    return;
+  if (toggle) {
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+      toggle.textContent = "☀️";
+    }
+
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      const isDark = body.classList.contains("dark");
+      toggle.textContent = isDark ? "☀️" : "🌙";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
   }
 
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark");
-    toggle.innerHTML = "☀️";
+  /* SCROLL REVEAL */
+  const revealEls = document.querySelectorAll("section, .card");
+  const reveal = () => {
+    revealEls.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        el.classList.add("revealed");
+      }
+    });
+  };
+  window.addEventListener("scroll", reveal);
+  reveal();
+
+  /* NAV ACTIVE LINK */
+  const sections = document.querySelectorAll("section");
+  const links = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(sec => {
+      if (scrollY >= sec.offsetTop - 120 &&
+          scrollY < sec.offsetTop + sec.offsetHeight) {
+        current = sec.id;
+      }
+    });
+
+    links.forEach(link => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+    });
+  });
+
+  /* EMAILJS */
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("H9M-u9_E2OCZPDsqp");
   }
 
-  toggle.addEventListener("click", () => {
-    body.classList.toggle("dark");
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const btn = document.querySelector(".send-btn");
 
-    if (body.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-      toggle.innerHTML = "☀️";
-    } else {
-      localStorage.setItem("theme", "light");
-      toggle.innerHTML = "🌙";
-    }
-  });
-});
+  if (form && status && btn) {
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      status.textContent = "Sending message...";
+      btn.classList.add("loading");
 
+      emailjs.sendForm("service_93ptkeb", "template_a4991zd", form)
+        .then(() => {
+          status.textContent = "✅ Message sent successfully!";
+          status.className = "success";
+          form.reset();
+          btn.classList.remove("loading");
+        })
+        .catch(err => {
+          console.error(err);
+          status.textContent = "❌ Failed to send message!";
+          status.className = "error";
+          btn.classList.remove("loading");
+        });
+    });
+  }
 
-/* ===============================
-   SCROLL REVEAL
-================================ */
-const revealElements = document.querySelectorAll("section, .card");
-
-const revealOnScroll = () => {
-  const windowHeight = window.innerHeight;
-
-  revealElements.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
-    if (elementTop < windowHeight - 100) {
-      el.classList.add("revealed");
-    }
-  });
-};
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-/* ===============================
-   NAVBAR ACTIVE LINK
-================================ */
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
-
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
-});
-
-/* ===============================
-   EMAILJS CONTACT FORM
-================================ */
-(function () {
-  emailjs.init("H9M-u9_E2OCZPDsqp"); // 🔴 replace
-})();
-
-const contactForm = document.getElementById("contact-form");
-const statusMsg = document.getElementById("form-status");
-const sendBtn = document.querySelector(".send-btn");
-
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  statusMsg.textContent = "Sending message...";
-  statusMsg.className = "";
-  sendBtn.classList.add("loading");
-
-  emailjs.sendForm(
-    "service_93ptkeb",     // ✅ your service ID
-    "template_a4991zd",    // 🔴 replace
-    this
-  )
-  .then(() => {
-    statusMsg.textContent = "✅ Message sent successfully!";
-    statusMsg.className = "success";
-    contactForm.reset();
-    sendBtn.classList.remove("loading");
-  })
-  .catch(() => {
-    statusMsg.textContent = "❌ Failed to send message. Try again!";
-    statusMsg.className = "error";
-    sendBtn.classList.remove("loading");
-  });
 });

@@ -1,10 +1,21 @@
+/* DARK MODE */
 const toggle = document.getElementById("themeToggle");
 const body = document.body;
 
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
 }
-const titleObserver = new IntersectionObserver(
+
+toggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    body.classList.contains("dark") ? "dark" : "light"
+  );
+});
+
+/* UNDERLINE ANIMATION ON SCROLL */
+const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -15,15 +26,6 @@ const titleObserver = new IntersectionObserver(
   { threshold: 0.6 }
 );
 
-document.querySelectorAll(".reveal-title").forEach(title => {
-  titleObserver.observe(title);
-});
-
-
-toggle.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    body.classList.contains("dark") ? "dark" : "light"
-  );
+document.querySelectorAll(".reveal-title").forEach(el => {
+  observer.observe(el);
 });

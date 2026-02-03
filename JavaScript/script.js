@@ -1,25 +1,33 @@
 /* ===============================
    DARK MODE TOGGLE
 ================================ */
-const toggle = document.getElementById("themeToggle");
-const body = document.body;
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("themeToggle");
+  const body = document.body;
 
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark");
-  toggle.innerHTML = "☀️";
-}
-
-toggle.addEventListener("click", () => {
-  body.classList.toggle("dark");
-
-  if (body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-    toggle.innerHTML = "☀️";
-  } else {
-    localStorage.setItem("theme", "light");
-    toggle.innerHTML = "🌙";
+  if (!toggle) {
+    console.error("Theme toggle button not found!");
+    return;
   }
+
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
+    toggle.innerHTML = "☀️";
+  }
+
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+
+    if (body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      toggle.innerHTML = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggle.innerHTML = "🌙";
+    }
+  });
 });
+
 
 /* ===============================
    SCROLL REVEAL

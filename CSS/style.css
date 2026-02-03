@@ -48,28 +48,31 @@ section {
   color: var(--text);
 }
 
-/* ===============================
-   NAVBAR
-================================ */
 .navbar {
-  background: var(--bg-light) !important;
-  border-bottom: 1px solid var(--border);
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-
-.navbar-brand {
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.logo {
+  font-size: 20px;
   font-weight: 700;
-  color: var(--text) !important;
 }
-
-.nav-link {
-  color: var(--muted) !important;
+.navbar nav a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #555;
   font-weight: 500;
-  margin-left: 12px;
 }
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--primary) !important;
+.navbar nav a:hover {
+  color: #2563eb;
 }
 
 /* ===============================

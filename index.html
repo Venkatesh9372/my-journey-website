@@ -1,295 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Venkatesh Karnure | Data Analyst</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Venkatesh Karnure – Data Analyst skilled in Python, SQL, Power BI, EDA, and Machine Learning. Portfolio showcasing real-world data projects." />
-  <meta name="keywords" content="Data Analyst, Python, SQL, Power BI, Machine Learning, Portfolio" />
-  <meta name="author" content="Venkatesh Karnure" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
+<body>
 
-<!-- ================= NAVBAR ================= -->
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#home">Venkatesh Karnure</a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navContent">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="container nav-wrap">
+    <div class="logo">Venkatesh Karnure</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<!-- ================= HERO ================= -->
-<section id="home" class="hero-section d-flex align-items-center">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <div class="col-lg-7">
-        <p class="text-primary fw-semibold mb-1">Hi, I'm</p>
-        <h1 class="display-4 fw-bold">Venkatesh Karnure</h1>
-        <h3 class="text-secondary mb-3">Data Analyst | Turning Data into Insights</h3>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
 
-        <p class="lead">
-          I analyze data, build machine learning models, and transform raw data
-          into actionable business insights using Python, SQL, and Power BI.
-        </p>
+    <div class="hero-left">
+      <h1 class="name">Venkatesh Karnure</h1>
+      <h2 class="title">Data Analyst | Turning Data into Insights</h2>
 
-        <!-- IMPACT METRICS -->
-        <div class="row text-center my-4">
-          <div class="col-4">
-            <h4 class="fw-bold text-primary">10+</h4>
-            <p class="small text-muted">Projects</p>
-          </div>
-          <div class="col-4">
-            <h4 class="fw-bold text-primary">3+</h4>
-            <p class="small text-muted">Dashboards</p>
-          </div>
-          <div class="col-4">
-            <h4 class="fw-bold text-primary">1</h4>
-            <p class="small text-muted">Internship</p>
-          </div>
-        </div>
+      <p class="summary">
+        I analyze data, build machine learning models, and transform raw data
+        into actionable business insights using Python, SQL, and Power BI.
+      </p>
 
-        <div class="d-flex flex-wrap gap-2">
-          <a href="https://drive.google.com/file/d/1_azCj6SenQGBiaQXmNmEAf7wffAatIg6/view"
-             class="btn btn-primary"
-             target="_blank">View Resume</a>
-
-          <a href="https://github.com/Venkatesh9372"
-             class="btn btn-outline-primary"
-             target="_blank">GitHub</a>
-
-          <a href="https://www.linkedin.com/in/venkateshk2003/"
-             class="btn btn-outline-secondary"
-             target="_blank">LinkedIn</a>
-        </div>
+      <div class="stats">
+        <div><span>10+</span><p>Projects</p></div>
+        <div><span>3+</span><p>Dashboards</p></div>
+        <div><span>1</span><p>Internship</p></div>
       </div>
 
-      <div class="col-lg-5 text-center mt-4 mt-lg-0">
-        <img src="Images/Venkatesh.jpg"
-             alt="Venkatesh Karnure"
-             class="img-fluid rounded-circle shadow"
-             width="280">
+      <div class="hero-buttons">
+        <a href="resume.pdf" target="_blank" class="btn primary">View Resume</a>
+        <a href="https://github.com/Venkatesh9372" target="_blank" class="btn outline">GitHub</a>
+        <a href="https://www.linkedin.com/in/venkateshk2003/" target="_blank" class="btn outline">LinkedIn</a>
       </div>
     </div>
+
+    <div class="hero-right">
+      <div class="photo-wrap">
+        <img src="profile.png" alt="Venkatesh Karnure">
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ================= ABOUT ================= -->
-<section id="about" class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="section-title underline reveal-title">
-  <i class="bi bi-briefcase-fill section-icon"></i>
-  ABOUT ME
-</h2>
-    <p class="text-muted">
-      Aspiring Data Analyst with strong foundations in Python, SQL, Power BI, and Machine Learning.
-      Experienced in data cleaning, exploratory data analysis, visualization, and predictive modeling.
-      Passionate about solving real-world business problems using data.
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      Aspiring Data Analyst with strong foundations in Python, SQL, Power BI,
+      and Machine Learning. Passionate about transforming raw data into
+      actionable insights.
     </p>
   </div>
 </section>
 
-<!-- ================= SKILLS ================= -->
-<section id="skills" class="py-5">
+<!-- SKILLS -->
+<section id="skills" class="section">
   <div class="container">
-<h2 class="section-title underline reveal-title">
-  <i class="bi bi-briefcase-fill section-icon"></i>
-  Skills
-</h2>
-    
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 skill-card">
-          <div class="card-body">
-            <h5 class="card-title">Programming</h5>
-            <p><strong>Python</strong> – EDA, automation, ML models</p>
-            <p><strong>SQL</strong> – Joins, CTEs, analytical queries</p>
-          </div>
-        </div>
-      </div>
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">Python, SQL</div>
+      <div class="card">Power BI, Excel</div>
+      <div class="card">EDA, Data Cleaning</div>
+      <div class="card">Machine Learning Basics</div>
+    </div>
+  </div>
+</section>
 
-      <div class="col-md-4">
-        <div class="card h-100 skill-card">
-          <div class="card-body">
-            <h5 class="card-title">Visualization</h5>
-            <p>Power BI – Dashboards, KPIs, DAX</p>
-            <p>Pandas, NumPy, Matplotlib, Seaborn</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 skill-card">
-          <div class="card-body">
-            <h5 class="card-title">Machine Learning & Tools</h5>
-            <p>Regression, Classification, ANN Basics</p>
-            <p>Excel, Git & GitHub, Streamlit</p>
-          </div>
-        </div>
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Telecom Customer Churn Analysis</h3>
+        <p>Power BI dashboard with business insights.</p>
+        <a href="https://github.com/Venkatesh9372" target="_blank" class="btn outline">
+          View Project
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= EDUCATION ================= -->
-<section id="education" class="py-5 bg-light">
+<!-- FOOTER -->
+<footer>
   <div class="container">
-    
-<h2 class="section-title underline reveal-title">
-  <i class="bi bi-briefcase-fill section-icon"></i>
-  Education & Internship
-</h2>
-
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5>B.Sc. in Computer Science</h5>
-            <p class="fw-semibold mb-1">Shivaji University, Kolhapur</p>
-            <p class="text-muted mb-0">2022 – 2025 | Grade: A</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5>Data Science Trainee</h5>
-            <p class="fw-semibold mb-1">Innomatics Research Labs</p>
-            <ul>
-              <li>Performed EDA & preprocessing using Python & SQL</li>
-              <li>Built interactive Power BI dashboards</li>
-              <li>Worked on real-world business datasets</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="social-icons">
+      <a href="mailto:venkateshkarnure19@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/venkateshk2003/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/Venkatesh9372" target="_blank"><i class="fab fa-github"></i></a>
     </div>
-  </div>
-</section>
 
-<!-- ================= PROJECTS ================= -->
-<section id="projects" class="py-5">
-  <div class="container">
-    
-    <h2 class="section-title underline reveal-title">
-  <i class="bi bi-briefcase-fill section-icon"></i>
-  PROJECTS
-</h2>
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="card h-100 project-card">
-          <div class="card-body">
-            <img src="Images/Projects/Customer_Churn_Analysis.png" class="img-fluid rounded mb-2">
-            <h5>Telecom Customer Churn Analysis</h5>
-            <p><strong>Tool:</strong> Power BI</p>
-            <p><strong>Outcome:</strong> Identified high-risk churn segments</p>
-            <a href="https://github.com/Venkatesh9372/Telecom-customer-churn-analysis-Dashboard"
-               target="_blank"
-               class="btn btn-sm btn-outline-primary">View Project</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 project-card">
-          <div class="card-body">
-            <img src="Images/Projects/Restaurant_Trends_Eazydiner.png" class="img-fluid rounded mb-2">
-            <h5>EazyDiner Restaurant Analysis</h5>
-            <p><strong>Tool:</strong> Python</p>
-            <p><strong>Outcome:</strong> Pricing, rating & discount insights</p>
-            <a href="https://github.com/Venkatesh9372/EDA-Eazydiner-restaurant-trends-analysis-Python"
-               target="_blank"
-               class="btn btn-sm btn-outline-primary">View Project</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 project-card">
-          <div class="card-body">
-            <img src="Images/Projects/Energy_Consumption_Analysis.png" class="img-fluid rounded mb-2">
-            <h5>World Energy Consumption Analysis</h5>
-            <p><strong>Tool:</strong> SQL</p>
-            <p><strong>Outcome:</strong> Regional energy insights</p>
-            <a href="https://github.com/Venkatesh9372/World-Wild-Energy-Consumption-SQL"
-               target="_blank"
-               class="btn btn-sm btn-outline-primary">View Project</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= CERTIFICATIONS ================= -->
-<section id="certifications" class="py-5 bg-light">
-  <div class="container text-center">
-    
-    <h2 class="section-title underline reveal-title">
-  <i class="bi bi-briefcase-fill section-icon"></i>
-  CERTIFICATES
-</h2>
-    <p>TATA Data Visualization Program</p>
-    <p>Python for Data Science</p>
-    <p>Machine Learning Fundamentals</p>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="py-5 contact-section text-white">
-  <div class="container text-center">
-    <h2 class="section-title mb-3">Contact Me</h2>
-    <p>📍 Pune, India</p>
-    <p>📧 <a href="mailto:venkateshkarnure19@gmail.com" class="text-white">E-mail</a></p>
-    <p>📞 <a href="tel:+919108959372" class="text-white">Mobile No.</a></p>
-    <p class="fw-semibold mt-3">Open to internships & entry-level Data Analyst roles</p>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="py-3 border-top bg-white">
-  <button id="themeToggle">🌙</button>
-  <div class="container text-center small text-muted">
-    © 2026 Venkatesh Karnure | Data Analyst Portfolio
+    <p>© 2026 <strong>Venkatesh Karnure</strong> · Data Analyst</p>
   </div>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
 
 </body>
 </html>

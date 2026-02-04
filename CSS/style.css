@@ -187,6 +187,15 @@ body.dark .hero-section {
   position: relative;
   overflow: hidden;
 }
+.cert-card::before {
+  pointer-events: none;
+}
+
+.view-btn {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
 
 .cert-card::before {
   content: "";
@@ -229,7 +238,7 @@ body.dark .hero-section {
   text-decoration: none;
   display: inline-block;
 }
-pointer-events: none;
+
 
 .view-btn:hover {
   background: linear-gradient(135deg, #d4af37, #facc15);

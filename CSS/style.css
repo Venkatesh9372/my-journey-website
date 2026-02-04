@@ -224,6 +224,12 @@ body.dark .hero-section {
   cursor: pointer;
   transition: all 0.35s ease;
 }
+.view-btn {
+  pointer-events: auto;
+  text-decoration: none;
+  display: inline-block;
+}
+pointer-events: none;
 
 .view-btn:hover {
   background: linear-gradient(135deg, #d4af37, #facc15);

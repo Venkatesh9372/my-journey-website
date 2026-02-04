@@ -10,6 +10,12 @@
   --primary: #d4af37;
   --border: #2a2a2f;
 }
+body,
+p,
+li,
+span {
+  color: var(--text);
+}
 
 /* DARK MODE */
 body.dark {
@@ -165,6 +171,10 @@ body.dark .hero-section {
   padding: 100px 20px;
   background: linear-gradient(180deg, var(--bg), var(--bg-soft));
 }
+#certificates .section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
 .cert-grid {
   display: grid;
@@ -186,12 +196,6 @@ body.dark .hero-section {
 }
 .cert-card::before {
   pointer-events: none;
-}
-
-.view-btn {
-  position: relative;
-  z-index: 10;
-  pointer-events: auto;
 }
 
 .cert-card::before {
@@ -229,18 +233,11 @@ body.dark .hero-section {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.35s ease;
-}
-.view-btn {
-  pointer-events: auto;
   text-decoration: none;
   display: inline-block;
-}
-
-
-.view-btn:hover {
-  background: linear-gradient(135deg, #d4af37, #facc15);
-  color: #000;
-  box-shadow: 0 12px 30px rgba(212,175,55,0.4);
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 /* ===============================
@@ -392,4 +389,23 @@ footer {
     height: 220px;
     margin-top: 20px;
   }
+   /* ===== VISIBILITY FIX ===== */
+section {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.card,
+.card h5,
+.card p,
+.card li {
+  color: var(--text) !important;
+}
+
+/* ===== CERTIFICATES TITLE CENTER ===== */
+#certificates .section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 }

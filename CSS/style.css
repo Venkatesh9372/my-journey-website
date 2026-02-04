@@ -96,6 +96,8 @@ section {
   align-items: center;
   background: linear-gradient(135deg, #0b0b0d, #1a1a1f);
   padding-top: 90px;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 body.dark .hero-section {
@@ -105,6 +107,7 @@ body.dark .hero-section {
 .hero-section h1 {
   font-size: 3rem;
   font-weight: 700;
+  color: var(--text);
 }
 
 .hero-section h3 {
@@ -118,7 +121,6 @@ body.dark .hero-section {
   color: var(--muted);
 }
 
-/* PROFILE IMAGE */
 .hero-section img {
   width: 280px;
   height: 280px;
@@ -129,11 +131,6 @@ body.dark .hero-section {
     0 0 0 14px rgba(212,175,55,0.12),
     0 20px 50px rgba(0,0,0,0.9);
   animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
 }
 
 /* ===============================

@@ -64,12 +64,21 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.classList.add("loading");
 
       emailjs.sendForm("service_93ptkeb", "template_a4991zd", form)
-        .then(() => {
-          status.textContent = "✅ Message sent successfully!";
-          status.className = "success";
-          form.reset();
-          btn.classList.remove("loading");
-        })
+  .then(() => {
+
+    // 🔹 AUTO-REPLY EMAIL TO USER
+    emailjs.sendForm(
+      "service_93ptkeb",
+      "template_n7ii29b", // 
+      form
+    );
+
+    status.textContent = "✅ Message sent successfully!";
+    status.className = "success";
+    form.reset();
+    btn.classList.remove("loading");
+  })
+
         .catch(err => {
           console.error(err);
           status.textContent = "❌ Failed to send message!";

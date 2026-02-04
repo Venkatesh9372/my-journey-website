@@ -1,23 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* THEME TOGGLE */
-  const toggle = document.getElementById("themeToggle");
-  const body = document.body;
-
-  if (toggle) {
-    if (localStorage.getItem("theme") === "dark") {
-      body.classList.add("dark");
-      toggle.textContent = "☀️";
-    }
-
-    toggle.addEventListener("click", () => {
-      body.classList.toggle("dark");
-      const isDark = body.classList.contains("dark");
-      toggle.textContent = isDark ? "☀️" : "🌙";
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-  }
-
   /* SCROLL REVEAL */
   const revealEls = document.querySelectorAll("section, .card");
   const reveal = () => {

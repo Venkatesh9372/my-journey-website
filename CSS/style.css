@@ -1,7 +1,44 @@
-/* ===============================
-   READABILITY + DARK BACKGROUND FIX
-   (NO LAYOUT / DESIGN CHANGES)
+
 ================================ */
+
+/* Entire page */
+html, body {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* All sections */
+section {
+  background-color: var(--bg) !important;
+}
+
+/* Navbar & footer */
+.navbar,
+footer {
+  background-color: var(--bg-light) !important;
+}
+
+/* Bootstrap overrides */
+.bg-light,
+.bg-white {
+  background-color: var(--bg) !important;
+}
+
+/* Cards remain dark */
+.card {
+  background: linear-gradient(180deg, var(--bg-light), var(--bg)) !important;
+}
+
+/* Ensure text visibility everywhere */
+h1, h2, h3, h4, h5, h6,
+p, li, span, a {
+  color: var(--text) !important;
+}
+
+/* Muted text still readable */
+.text-muted {
+  color: var(--muted) !important;
+}
 
 /* Force dark background everywhere */
 body,

@@ -291,35 +291,54 @@
     </form>
 
   </div>
-</section>
+
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
-  (function () {
-    emailjs.init("H9M-u9_E2OCZPDsqp"); // 🔴 replace
-  })();
+document.addEventListener("DOMContentLoaded", function () {
 
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
+  // Initialize EmailJS
+  emailjs.init("H9M-u9_E2OCZPDsqp"); // ✅ Public Key
+
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const button = document.querySelector(".send-btn");
+
+  if (!form) {
+    console.error("Contact form not found");
+    return;
+  }
+
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    status.textContent = "⏳ Sending message...";
+    status.className = "";
+    button.disabled = true;
+
     emailjs.sendForm(
-      "service_93ptkeb",   // 🔴 replace
-      "template_a4991zd",  // 🔴 replace
-      this
+      "service_93ptkeb",     // ✅ Service ID
+      "template_a4991zd",    // ✅ Template ID
+      form
     )
     .then(() => {
-      document.getElementById("form-status").innerHTML =
-        "✅ Message sent successfully!";
-      this.reset();
+      status.textContent = "✅ Message sent successfully!";
+      status.className = "success";
+      form.reset();
+      button.disabled = false;
     })
-    .catch(() => {
-      document.getElementById("form-status").innerHTML =
-        "❌ Failed to send message. Try again!";
+    .catch((error) => {
+      console.error("EmailJS Error:", error);
+      status.textContent = "❌ Failed to send message. Try again!";
+      status.className = "error";
+      button.disabled = false;
     });
   });
-</script>
 
+});
+</script>
+</section>
 
 <footer class="py-3 text-center text-muted bg-white border-top">
   © 2026 Venkatesh Karnure | Data Analyst Portfolio

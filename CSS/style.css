@@ -226,12 +226,31 @@ section {
     padding: 30px;
     text-align: center;
     transition: all 0.4s ease;
+    position: relative;
+}
+
+.skill-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary), #facc15);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.skill-card:hover::before {
+    opacity: 1;
 }
 
 .skill-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
-    border-color: var(--primary);
+    border-color: transparent;
 }
 
 .skill-card i {
@@ -269,11 +288,32 @@ section {
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s ease;
+    position: relative;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary), #facc15);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.project-card:hover::before {
+    opacity: 1;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 25px 60px rgba(212, 175, 55, 0.25);
+    border-color: transparent;
 }
 
 .project-card img {
@@ -290,6 +330,8 @@ section {
 
 .project-content {
     padding: 25px;
+    position: relative;
+    z-index: 2;
 }
 
 .project-card h3 {
@@ -327,11 +369,31 @@ section {
     padding: 30px;
     margin-bottom: 30px;
     transition: all 0.4s ease;
+    position: relative;
+}
+
+.education-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary), #facc15);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.education-item:hover::before {
+    opacity: 1;
 }
 
 .education-item:hover {
     transform: translateX(10px);
     box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+    border-color: transparent;
 }
 
 .education-item h5,
@@ -381,7 +443,7 @@ section {
     text-align: center;
     transition: all 0.4s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .cert-card::before {
@@ -392,9 +454,30 @@ section {
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
+    border-radius: 22px;
+    z-index: 0;
+}
+
+.cert-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary), #facc15);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
 }
 
 .cert-card:hover::before {
+    opacity: 1;
+}
+
+.cert-card:hover::after {
     opacity: 1;
 }
 
@@ -403,16 +486,21 @@ section {
     font-weight: 600;
     margin-bottom: 18px;
     color: var(--text);
+    position: relative;
+    z-index: 1;
 }
 
 .cert-card p {
     color: var(--muted);
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .cert-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 25px 60px rgba(212,175,55,0.35);
+    border-color: transparent;
 }
 
 .view-btn {
@@ -426,11 +514,15 @@ section {
     transition: all 0.35s ease;
     text-decoration: none;
     display: inline-block;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .view-btn:hover {
     background: var(--primary);
     color: #000;
+    transform: scale(1.05);
 }
 
 /* =============================== CONTACT ================================ */

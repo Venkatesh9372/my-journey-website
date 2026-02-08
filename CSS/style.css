@@ -657,10 +657,47 @@ footer p {
     font-size: 1.5rem;
     transition: all 0.3s ease;
 }
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px; /* 🔥 SPACE BETWEEN ICONS */
+  margin-top: 30px;
+}
+
+.social-icons a {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #0b0b0d;
+  border: 1px solid #2a2a2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  transition: all 0.35s ease;
+  text-decoration: none;
+}
+
+/* ICON COLOR */
+.social-icons i {
+  color: #ffffff;
+}
+
 .social-icons img.hf-icon {
   width: 22px;
   height: 22px;
   filter: brightness(0) invert(1);
+}
+
+.social-icons a:hover {
+  background: linear-gradient(135deg, #d4af37, #facc15);
+  box-shadow: 0 10px 25px rgba(212,175,55,0.45);
+  transform: translateY(-4px);
+}
+
+.social-icons a:hover i {
+  color: #000;
 }
 
 .social-icons a:hover img.hf-icon {

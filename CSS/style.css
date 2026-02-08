@@ -657,6 +657,15 @@ footer p {
     font-size: 1.5rem;
     transition: all 0.3s ease;
 }
+.social-icons img.hf-icon {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+}
+
+.social-icons a:hover img.hf-icon {
+  filter: none;
+}
 
 .social-links a:hover {
     color: var(--primary);

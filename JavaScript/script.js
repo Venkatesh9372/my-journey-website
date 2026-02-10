@@ -12,11 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     status.style.color = "#64748b";
 
     // 1️⃣ Send mail to YOU
-    emailjs.sendForm(
-      "service_93ptkeb",
-      "template_admin",
-      form
-    )
+    emailjs.sendForm("service_93ptkeb", "template_a4991zd", form)
+
     .then(() => {
       // 2️⃣ Send auto-reply to USER
       return emailjs.sendForm(

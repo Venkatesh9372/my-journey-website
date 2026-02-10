@@ -284,51 +284,6 @@ development—web scraping, ETL, and advanced visualization.
     <label>Your Message</label>
     <textarea name="message" rows="5" required></textarea>
   </div>
-
-  <!-- REQUIRED FOR EMAILJS -->
-  <input type="hidden" name="reply_to">
-
-  <button type="submit" class="send-btn">Send Message</button>
-  <p id="form-status"></p>
-</form>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  emailjs.init("H9M-u9_E2OCZPDsqp"); // ✅ Public Key
-
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // set reply_to dynamically
-    form.reply_to.value = form.email.value;
-
-    status.textContent = "Sending message...";
-
-    emailjs.sendForm(
-      "service_93ptkeb",   // ✅ Service ID
-      "template_a4991zd",  // ✅ Template ID
-      form
-    )
-    .then(() => {
-      status.textContent = "✅ Message sent successfully!";
-      status.style.color = "#22c55e";
-      form.reset();
-    })
-    .catch((error) => {
-      console.error(error);
-      status.textContent = "❌ Failed to send message. Try again!";
-      status.style.color = "#ef4444";
-    });
-  });
-
-});
-</script>
 </section>
 
 <footer class="py-4 text-center border-top">

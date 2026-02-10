@@ -284,6 +284,13 @@ development—web scraping, ETL, and advanced visualization.
     <label>Your Message</label>
     <textarea name="message" rows="5" required></textarea>
   </div>
+  
+  <!-- REQUIRED FOR EMAILJS -->
+  <input type="hidden" name="reply_to">
+
+  <button type="submit" class="send-btn">Send Message</button>
+  <p id="form-status"></p>
+</form>
 </section>
 
 <footer class="py-4 text-center border-top">

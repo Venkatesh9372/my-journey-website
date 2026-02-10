@@ -33,24 +33,26 @@ document.addEventListener("DOMContentLoaded", () => {
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-  emailjs.init("H9M-u9_E2OCZPDsqp"); // ✅ Public Key
+  // Initialize EmailJS with your Public Key
+  emailjs.init("H9M-u9_E2OCZPDsqp");
 
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // set reply_to dynamically
+    // Set reply_to dynamically from email field
     form.reply_to.value = form.email.value;
 
     status.textContent = "Sending message...";
+    status.style.color = "#64748b";
 
     emailjs.sendForm(
-      "service_93ptkeb",   // ✅ Service ID
-      "template_a4991zd",  // ✅ Template ID
+      "service_93ptkeb",   // Service ID
+      "template_a4991zd",  // Template ID
       form
     )
     .then(() => {
@@ -59,11 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
       form.reset();
     })
     .catch((error) => {
-      console.error(error);
-      status.textContent = "❌ Failed to send message. Try again!";
+      console.error("EmailJS Error:", error);
+      status.textContent = "❌ Failed to send message. Please try again.";
       status.style.color = "#ef4444";
     });
   });
 
 });
 </script>
+

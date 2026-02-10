@@ -11,21 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
     status.textContent = "Sending message...";
     status.style.color = "#64748b";
 
-    // 1️⃣ Send email to YOU
+    // 1️⃣ Send mail to YOU
     emailjs.sendForm(
       "service_93ptkeb",
       "template_admin",
       form
     )
     .then(() => {
-
       // 2️⃣ Send auto-reply to USER
       return emailjs.sendForm(
         "service_93ptkeb",
         "template_user",
         form
       );
-
     })
     .then(() => {
       status.textContent = "✅ Message sent successfully!";
@@ -33,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
     })
     .catch((error) => {
-      console.error("EmailJS Error:", error);
-      status.textContent = "❌ Failed to send message. Please try again.";
+      console.error(error);
+      status.textContent = "❌ Failed to send message.";
       status.style.color = "#ef4444";
     });
   });

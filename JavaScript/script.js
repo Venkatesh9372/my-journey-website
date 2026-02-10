@@ -30,13 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-   <!-- REQUIRED FOR EMAILJS -->
-  <input type="hidden" name="reply_to">
-
-  <button type="submit" class="send-btn">Send Message</button>
-  <p id="form-status"></p>
-</form>
-
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>

@@ -30,44 +30,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* EMAILJS */
-  if (typeof emailjs !== "undefined") {
-    emailjs.init("H9M-u9_E2OCZPDsqp");
-  }
+   <!-- REQUIRED FOR EMAILJS -->
+  <input type="hidden" name="reply_to">
+
+  <button type="submit" class="send-btn">Send Message</button>
+  <p id="form-status"></p>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  emailjs.init("H9M-u9_E2OCZPDsqp"); // ✅ Public Key
 
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
-  const btn = document.querySelector(".send-btn");
 
-  if (form && status && btn) {
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      status.textContent = "Sending message...";
-      btn.classList.add("loading");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      emailjs.sendForm("service_93ptkeb", "template_a4991zd", form)
-  .then(() => {
+    // set reply_to dynamically
+    form.reply_to.value = form.email.value;
 
-    // 🔹 AUTO-REPLY EMAIL TO USER
+    status.textContent = "Sending message...";
+
     emailjs.sendForm(
-      "service_93ptkeb",
-      "template_n7ii29b", // 
+      "service_93ptkeb",   // ✅ Service ID
+      "template_a4991zd",  // ✅ Template ID
       form
-    );
-
-    status.textContent = "✅ Message sent successfully!";
-    status.className = "success";
-    form.reset();
-    btn.classList.remove("loading");
-  })
-
-        .catch(err => {
-          console.error(err);
-          status.textContent = "❌ Failed to send message!";
-          status.className = "error";
-          btn.classList.remove("loading");
-        });
+    )
+    .then(() => {
+      status.textContent = "✅ Message sent successfully!";
+      status.style.color = "#22c55e";
+      form.reset();
+    })
+    .catch((error) => {
+      console.error(error);
+      status.textContent = "❌ Failed to send message. Try again!";
+      status.style.color = "#ef4444";
     });
-  }
+  });
 
 });
+</script>

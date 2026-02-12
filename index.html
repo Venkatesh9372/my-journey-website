@@ -262,70 +262,20 @@ development—web scraping, ETL, and advanced visualization.
 </section>
 
 <!-- ================= CONTACT ================= -->
-<section id="contact" class="contact-section">
-  <div class="container">
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2 class="section-title">Contact Me</h2>
 
-    <h2 class="section-title text-center">Contact Me</h2>
-    <p class="contact-subtitle text-center">
-      Interested in working together? Feel free to reach out.
-    </p>
+  <form id="contact-form" class="contact-form">
+    <div class="contact-row">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn primary">Send Message</button>
+  </form>
 
-    <form id="contact-form" class="contact-form" novalidate>
-      <fieldset>
-        <legend class="sr-only">Contact Form</legend>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your full name"
-              autocomplete="name"
-              required
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email address"
-              autocomplete="email"
-              required
-            >
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            placeholder="Write your message here..."
-            required
-          ></textarea>
-        </div>
-
-        <!-- Required for EmailJS -->
-        <button type="submit" class="send-btn">
-          Send Message
-        </button>
-
-        <p id="form-status" role="status" aria-live="polite"></p>
-
-      </fieldset>
-    </form>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script src="script.js"></script>
-
-  </div>
 </section>
-
 <footer class="py-4 text-center border-top">
 
   <div class="social-icons">

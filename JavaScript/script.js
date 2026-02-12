@@ -1,37 +1,44 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* EMAILJS INIT /
+(function () {
+  emailjs.init("H9M-u9_E2OCZPDsqp"); // ✅ Public Key
+})();
 
-  emailjs.init("H9M-u9_E2OCZPDsqp");
+/ CONTACT FORM SUBMIT /
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
+  const form = this;
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  // 1️⃣ Send email to YOU (Admin email)
+  emailjs.sendForm(
+    "service_93ptkeb",
+    "template_a4991zd", // ✅ your main template
+    form
+  ).then(() => {
 
-    status.textContent = "Sending message...";
-    status.style.color = "#64748b";
+    // 2️⃣ Send AUTO-REPLY to USER
+    emailjs.sendForm(
+      "service_93ptkeb",
+      "template_n7ii29b", // 🔴 replace with auto-reply template ID
+      form
+    );
 
-    // 1️⃣ Send mail to YOU
-    emailjs.sendForm("service_93ptkeb", "template_a4991zd", form)
+    showToast("Message sent successfully!");
+    form.reset();
 
-    .then(() => {
-      // 2️⃣ Send auto-reply to USER
-      return emailjs.sendForm(
-        "service_93ptkeb",
-        "template_user",
-        form
-      );
-    })
-    .then(() => {
-      status.textContent = "✅ Message sent successfully!";
-      status.style.color = "#22c55e";
-      form.reset();
-    })
-    .catch((error) => {
-      console.error(error);
-      status.textContent = "❌ Failed to send message.";
-      status.style.color = "#ef4444";
-    });
+  }).catch((error) => {
+    console.error("EmailJS Error:", error);
+    showToast("Failed to send message", true);
   });
-
 });
+
+/ TOAST */
+function showToast(msg, error = false) {
+  const t = document.createElement("div");
+  t.className = toast ${error ? "error" : ""};
+  t.textContent = msg;
+  document.body.appendChild(t);
+
+  setTimeout(() => t.classList.add("show"), 100);
+  setTimeout(() => t.remove(), 3000);
+}

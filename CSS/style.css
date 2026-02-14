@@ -1,9 +1,4 @@
 /* ======================================
-   VENGATESH KARNURE PORTFOLIO - FULL CSS
-   All fixes + Saurabh-inspired premium effects
-====================================== */
-
-/* ======================================
    CSS VARIABLES & RESET
 ====================================== */
 :root {
@@ -108,73 +103,69 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
     color: var(--primary) !important;
 }
 
-/* ======================================
-   HERO SECTION (No zoom + glow effect)
-====================================== */
-.hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(180deg, var(--bg), var(--bg-soft));
-    padding: 120px 20px 80px;
-    background-size: 100% auto !important;
-    background-position: center top !important;
-    background-repeat: no-repeat !important;
-}
-
+/* HERO SECTION  */
 .hero-content {
     display: flex;
     align-items: center;
-    gap: 60px;  /* Reduced gap */
+    gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
 }
 
-.hero-text h1 {
-    font-size: clamp(2.2rem, 4vw, 3.2rem) !important;  /* Reduced */
-    font-weight: 800;
-    margin-bottom: 1.2rem;
-    background: linear-gradient(135deg, var(--primary), #facc15);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 
-        0 0 20px rgba(212, 175, 55, 0.3),
-        0 0 40px rgba(212, 175, 55, 0.1);
+.hero-text {
+    flex: 1;  /* Takes more space */
+    max-width: 650px;
 }
 
-.subtitle {
-    font-size: 1.2rem !important;  /* Reduced */
-    color: var(--muted);
-    margin-bottom: 1.5rem;
+.hero-image {
+    flex-shrink: 0;  /* Photo fixed size */
+    width: 280px;
 }
 
-.hero-text p { 
-    font-size: 1rem !important;  /* Reduced */
-    color: var(--muted); 
-    margin-bottom: 2.5rem;
-    line-height: 1.7;
+.photo-container {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto;
+    padding: 12px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(250, 204, 21, 0.05));
+    border-radius: 50%;
+    border: 3px solid rgba(212, 175, 55, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .hero-image img {
-    width: 280px;  /* Slightly smaller */
-    height: 280px;
-    border-radius: 50%;
-    border: 5px solid var(--primary);
-    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
 }
 
-.cta-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+@media (max-width: 992px) {
+    .hero-content { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 2.5rem; 
+    }
+    
+    .hero-text {
+        order: 2;  /* Text bottom */
+        max-width: 100%;
+    }
+    
+    .hero-image {
+        order: 1;  /* Photo top */
+    }
+    
+    .photo-container {
+        width: 220px;
+        height: 220px;
+    }
 }
 
-/* ======================================
-   BUTTONS (3D Shadow + Glow)
-====================================== */
+
+/* BUTTONS */
 .btn-primary-custom, .btn-secondary-custom {
     padding: 14px 36px;
     border-radius: 50px;
@@ -191,7 +182,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
     background: linear-gradient(135deg, var(--primary), #facc15);
     color: #000;
 }
-/* Replace .view-btn CSS with this */
+/* Replace  */
 .view-btn {
     display: inline-block !important;
     padding: 12px 32px !important;
@@ -262,7 +253,7 @@ section {
 }
 
 /* ======================================
-   GLASSMORPHISM (Saurabh Style) - ALL CARDS
+   GLASSMORPHISM 
 ====================================== */
 .card, .skill-card, .project-card, .cert-card, .education-item, .contact-form {
     background: rgba(18, 18, 22, 0.6) !important;
@@ -344,9 +335,7 @@ section {
     transition: width 2s ease;
 }
 
-/* ======================================
-   PROJECTS GRID
-====================================== */
+/*  PROJECTS GRID */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -413,9 +402,7 @@ section {
     text-decoration: none;
 }
 
-/* ======================================
-   EDUCATION
-====================================== */
+/*   EDUCATION */
 .education-timeline {
     max-width: 900px;
     margin: 0 auto;
@@ -507,53 +494,74 @@ section {
 }
 
 /* ======================================
-   CONTACT FORM (Placeholder Fix)
+   CONTACT FORM -
 ====================================== */
 .contact-form {
-    background: rgba(18, 18, 22, 0.6) !important;
-    backdrop-filter: blur(16px);
+    background: #000000 !important;           
+    backdrop-filter: blur(10px);
     padding: 2.5rem;
     border-radius: 20px;
-    border: 1px solid rgba(42, 42, 46, 0.4);
+    border: 1px solid rgba(42, 42, 46, 0.5); 
 }
 
+/* Input fields - Black BG + White Text */
 .form-control-dark,
 .form-control-dark:focus {
-    background: rgba(26, 26, 30, 0.8) !important;
-    border: 2px solid var(--border) !important;
-    color: var(--text) !important;
+    background: #0a0a0a !important;           
+    border: 2px solid #2a2a2e !important;    
+    color: #ffffff !important;                
     border-radius: 12px !important;
     padding: 1rem 1.25rem !important;
     font-size: 0.95rem !important;
     height: 56px;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* PLACEHOLDER TEXT VISIBLE */
+/* Placeholder  */
 .form-control-dark::placeholder {
-    color: #9ca3af !important;
-    opacity: 0.9 !important;
+    color: #9ca3af !important;     
+    opacity: 1 !important;
 }
 
 textarea.form-control-dark::placeholder {
     color: #9ca3af !important;
-    opacity: 0.9 !important;
+    opacity: 1 !important;
 }
 
+/* Focus - Gold border + white text */
 .form-control-dark:focus {
-    border-color: var(--primary) !important;
+    background: #0a0a0a !important;      
+    border-color: var(--primary) !important;  
+    color: #ffffff !important;           
     box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.3);
-    transform: translateY(-1px);
 }
 
+/* Textarea */
 textarea.form-control-dark {
     height: 140px !important;
     resize: vertical;
+    background: #0a0a0a !important;
+    color: #ffffff !important;
 }
 
-/* ======================================
-   FOOTER & SOCIAL ICONS (Pulse Animation)
-====================================== */
+/* Send Button - Gold */
+.contact-form .btn-primary-custom {
+    background: linear-gradient(135deg, var(--primary), #facc15) !important;
+    color: #000 !important;
+    border: none !important;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.contact-form .btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* FOOTER & SOCIAL ICONS  */
 footer {
     background: var(--bg-light);
     border-top: 1px solid var(--border);

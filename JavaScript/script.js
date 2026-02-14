@@ -50,14 +50,21 @@ window.addEventListener("scroll", () => {
     }
 });
 
-/* ======================================
-   CERTIFICATE PDF HANDLER
-====================================== */
-document.querySelectorAll('.view-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const href = btn.getAttribute('href');
-        window.open(href, "_blank");
+/* Replace certificate handler with this */
+document.addEventListener('DOMContentLoaded', function() {
+    // Certificate buttons - Direct link open
+    document.querySelectorAll('.view-btn').forEach((btn, index) => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const href = this.getAttribute('href');
+            console.log('Opening PDF:', href); // Debug
+            
+            if (href && href.includes('.pdf')) {
+                window.open(href, '_blank', 'noopener,noreferrer');
+            }
+        });
     });
 });
 

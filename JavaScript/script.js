@@ -1,33 +1,4 @@
 /* ======================================
-   DARK MODE TOGGLE (Persists)
-====================================== */
-const themeToggle = document.createElement("button");
-themeToggle.id = "themeToggle";
-themeToggle.innerHTML = "☀️";
-document.body.appendChild(themeToggle);
-
-const body = document.body;
-
-// Load saved theme
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-    body.classList.remove("dark");
-    themeToggle.innerHTML = "🌙";
-}
-
-// Toggle theme
-themeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark");
-    if (body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-        themeToggle.innerHTML = "☀️";
-    } else {
-        localStorage.setItem("theme", "light");
-        themeToggle.innerHTML = "🌙";
-    }
-});
-
-/* ======================================
    SCROLL REVEAL ANIMATIONS
 ====================================== */
 const revealElements = document.querySelectorAll("section, .card, .cert-card, .skill-card, .project-card, .education-item");

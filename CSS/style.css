@@ -191,6 +191,30 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
     background: linear-gradient(135deg, var(--primary), #facc15);
     color: #000;
 }
+/* Replace .view-btn CSS with this */
+.view-btn {
+    display: inline-block !important;
+    padding: 12px 32px !important;
+    border: 2px solid var(--primary) !important;
+    background: transparent !important;
+    color: var(--primary) !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    margin-top: 1.5rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+    transition: all 0.4s ease !important;
+    pointer-events: auto !important;  /* ← CLICK ENABLE */
+}
+
+.view-btn:hover {
+    background: var(--primary) !important;
+    color: #000 !important;
+    transform: scale(1.05) !important;
+    text-decoration: none !important;
+}
 
 .btn-primary-custom:hover {
     transform: translateY(-3px) scale(1.05);

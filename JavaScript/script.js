@@ -1,127 +1,151 @@
 /* ======================================
-   DARK MODE TOGGLE
+   DARK MODE TOGGLE (Persists)
 ====================================== */
-const toggle = document.getElementById("themeToggle");
+const themeToggle = document.createElement("button");
+themeToggle.id = "themeToggle";
+themeToggle.innerHTML = "☀️";
+document.body.appendChild(themeToggle);
+
 const body = document.body;
 
 // Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark");
-  if (toggle) toggle.innerHTML = "☀️";
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") {
+    body.classList.remove("dark");
+    themeToggle.innerHTML = "🌙";
 }
 
 // Toggle theme
-if (toggle) {
-  toggle.addEventListener("click", () => {
+themeToggle.addEventListener("click", () => {
     body.classList.toggle("dark");
-
     if (body.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-      toggle.innerHTML = "☀️";
+        localStorage.setItem("theme", "dark");
+        themeToggle.innerHTML = "☀️";
     } else {
-      localStorage.setItem("theme", "light");
-      toggle.innerHTML = "🌙";
+        localStorage.setItem("theme", "light");
+        themeToggle.innerHTML = "🌙";
     }
-  });
-}
-
+});
 
 /* ======================================
-   SCROLL REVEAL ANIMATION
+   SCROLL REVEAL ANIMATIONS
 ====================================== */
-const revealElements = document.querySelectorAll("section, .card, .cert-card");
+const revealElements = document.querySelectorAll("section, .card, .cert-card, .skill-card, .project-card, .education-item");
 
-function revealOnScroll() {
-  const windowHeight = window.innerHeight;
-
-  revealElements.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
-
-    if (elementTop < windowHeight - 100) {
-      el.classList.add("revealed");
-    }
-  });
-}
+const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 120) {
+            el.classList.add("revealed");
+        }
+    });
+};
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
-
 /* ======================================
-   NAVBAR ACTIVE LINK ON SCROLL
+   NAVBAR: ACTIVE LINK + GLASS EFFECT
 ====================================== */
-const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-link");
 
 window.addEventListener("scroll", () => {
-  let current = "";
+    // Active navigation
+    let current = "";
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+        }
+    });
 
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute("id");
+    // Navbar glass effect
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(18, 18, 22, 0.95)';
+        navbar.style.backdropFilter = 'blur(20px)';
+    } else {
+        navbar.style.background = 'var(--bg-light)';
+        navbar.style.backdropFilter = 'blur(10px)';
     }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
 });
-
 
 /* ======================================
-   OPEN CERTIFICATE PDF
+   CERTIFICATE PDF HANDLER
 ====================================== */
-function openPDF(path) {
-  window.open(path, "_blank");
-}
-
-/* EMAILJS INIT /
-(function () {
-  emailjs.init("H9M-u9_E2OCZPDsqp"); // ✅ Public Key
-})();
-
-/ CONTACT FORM SUBMIT /
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const form = this;
-
-  // 1️⃣ Send email to YOU (Admin email)
-  emailjs.sendForm(
-    "service_93ptkeb",
-    "template_a4991zd", // ✅ your main template
-    form
-  ).then(() => {
-
-    // 2️⃣ Send AUTO-REPLY to USER
-    emailjs.sendForm(
-      "service_93ptkeb",
-      "template_n7ii29b", // 🔴 replace with auto-reply template ID
-      form
-    );
-
-    showToast("Message sent successfully!");
-    form.reset();
-
-  }).catch((error) => {
-    console.error("EmailJS Error:", error);
-    showToast("Failed to send message", true);
-  });
+document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = btn.getAttribute('href');
+        window.open(href, "_blank");
+    });
 });
 
-/ TOAST */
-function showToast(msg, error = false) {
-  const t = document.createElement("div");
-  t.className = toast ${error ? "error" : ""};
-  t.textContent = msg;
-  document.body.appendChild(t);
+/* ======================================
+   EMAILJS CONTACT FORM (YOUR KEYS ✅)
+====================================== */
+(function() {
+    emailjs.init("H9M-u9_E2OCZPDsqp");
+})();
 
-  setTimeout(() => t.classList.add("show"), 100);
-  setTimeout(() => t.remove(), 3000);
+document.getElementById("contact-form")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = this;
+    
+    // Send to admin
+    emailjs.sendForm("service_93ptkeb", "template_a4991zd", form)
+        .then(() => {
+            // Auto-reply to user
+            emailjs.sendForm("service_93ptkeb", "template_n7ii29b", form)
+                .then(() => {
+                    showToast("Message sent successfully! 🎉 I'll reply within 24 hours.");
+                    form.reset();
+                });
+        })
+        .catch((error) => {
+            console.error("EmailJS Error:", error);
+            showToast("Failed to send message. Try emailing me directly!", true);
+        });
+});
+
+/* ======================================
+   TOAST NOTIFICATIONS
+====================================== */
+function showToast(message, isError = false) {
+    const toast = document.createElement("div");
+    toast.className = `toast ${isError ? "error" : ""}`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.classList.add("show"), 150);
+    setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 400);
+    }, 3500);
 }
+
+/* ======================================
+   SMOOTH SCROLLING FOR ANCHOR LINKS
+====================================== */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href");
+        const target = document.querySelector(targetId);
+        if (target && targetId !== "#") {
+            e.preventDefault();
+            target.scrollIntoView({ 
+                behavior: "smooth", 
+                block: "start" 
+            });
+        }
+    });
+});

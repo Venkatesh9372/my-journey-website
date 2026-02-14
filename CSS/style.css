@@ -10,6 +10,79 @@
     --primary: #d4af37;
     --border: #2a2a2e;
 }
+/* ======================================
+   FONT SIZE REDUCTION - ALL SECTIONS
+====================================== */
+
+/* Hero Section - 20% smaller */
+.hero-text h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem) !important;  /* 4rem → 3.2rem */
+}
+
+.subtitle {
+    font-size: 1.2rem !important;  /* 1.4rem → 1.2rem */
+}
+
+.hero-text p { 
+    font-size: 1rem !important;  /* 1.15rem → 1rem */
+}
+
+/* Section Titles - 15% smaller */
+.section-title {
+    font-size: 2.3rem !important;  /* 2.8rem → 2.3rem */
+}
+
+/* Navbar - 10% smaller */
+.navbar-brand {
+    font-size: 1.35rem !important;  /* 1.6rem → 1.35rem */
+}
+
+.nav-link {
+    font-size: 0.95rem !important;  /* Added */
+}
+
+/* Cards & Content - 15% smaller */
+.skill-card h5,
+.project-content h5,
+.cert-card h3,
+.education-item h5 {
+    font-size: 1.15rem !important;  /* Reduced */
+}
+
+.skill-card p,
+.project-content p,
+.cert-card p {
+    font-size: 0.92rem !important;  /* Reduced */
+}
+
+/* Form inputs - Perfect size */
+.form-control-dark {
+    font-size: 0.95rem !important;  /* Slightly smaller */
+}
+
+.contact-form .btn-primary-custom {
+    font-size: 1rem !important;  /* Perfect button size */
+}
+
+/* Footer */
+footer p {
+    font-size: 0.9rem !important;
+}
+
+/* Mobile - Even smaller */
+@media (max-width: 768px) {
+    .hero-text h1 { 
+        font-size: 2rem !important;  /* 2.5rem → 2rem */
+    }
+    
+    .section-title { 
+        font-size: 1.95rem !important;  /* Smaller mobile titles */
+    }
+    
+    .nav-link {
+        font-size: 0.9rem !important;
+    }
+}
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 

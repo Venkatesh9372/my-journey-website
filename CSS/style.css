@@ -1,6 +1,5 @@
 /* ======================================
    VENGATESH PORTFOLIO - PRODUCTION READY
-   All fonts <1rem + Hero Right Photo + Black Forms + Gold Buttons
 ====================================== */
 
 /* ======================================
@@ -28,7 +27,7 @@ html, body {
     color: var(--text) !important;
     line-height: 1.6;
     scroll-behavior: smooth;
-    font-size: 0.9rem; /* Base font <1rem */
+    font-size: 1.0rem; /* Base font <1rem */
 }
 
 /* Force text colors */
@@ -69,14 +68,14 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
 .navbar-brand {
     color: var(--primary) !important;
     font-weight: 800;
-    font-size: 1.25rem !important; /* <1.3rem */
+    font-size: 1.0rem !important; /* <1.3rem */
 }
 
 .nav-link {
     color: var(--text) !important;
     margin: 0 0.75rem;
     font-weight: 500;
-    font-size: 0.88rem !important; /* <1rem */
+    font-size: 1.0rem !important; /* <1rem */
     position: relative;
     transition: all 0.3s ease;
 }
@@ -192,7 +191,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
     padding: 12px 28px !important;
     border-radius: 50px !important;
     font-weight: 600 !important;
-    font-size: 0.88rem !important; /* <1rem */
+    font-size: 1.0rem !important; /* <1rem */
     text-decoration: none !important;
     transition: all 0.3s ease !important;
     height: 48px !important;
@@ -305,7 +304,7 @@ section {
 }
 
 .skill-card i {
-    font-size: 2.5rem; /* <2.8rem */
+    font-size: 2.0rem; /* <2.8rem */
     color: var(--primary);
     margin-bottom: 1rem;
 }
@@ -361,7 +360,7 @@ section {
 }
 
 .project-content p {
-    font-size: 0.85rem !important; /* <0.92rem */
+    font-size: 1.0rem !important; /* <0.92rem */
     margin-bottom: 1rem;
 }
 
@@ -389,7 +388,7 @@ section {
 }
 
 .cert-card h3 {
-    font-size: 1.1rem !important; /* <1.2rem */
+    font-size: 1.0rem !important; /* <1.2rem */
     margin-bottom: 1rem;
 }
 
@@ -407,7 +406,7 @@ section {
     color: var(--primary) !important;
     border-radius: 50px !important;
     font-weight: 600 !important;
-    font-size: 0.88rem !important; /* <0.95rem */
+    font-size: 1.0rem !important; /* <0.95rem */
     text-decoration: none !important;
     margin-top: 1rem !important;
     transition: all 0.4s ease !important;
@@ -442,7 +441,7 @@ textarea {
     color: #ffffff !important;
     border-radius: 12px !important;
     padding: 0.9rem 1.1rem !important;
-    font-size: 0.88rem !important;
+    font-size: 1.0rem !important;
     height: 52px !important;
 }
 
@@ -475,7 +474,7 @@ textarea.form-control-dark {
     padding: 0.9rem 1.8rem !important;
     border-radius: 12px !important;
     width: 100% !important;
-    font-size: 0.95rem !important;
+    font-size: 1.0rem !important;
 }
 
 /* ======================================

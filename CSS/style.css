@@ -23,7 +23,7 @@ html, body {
     color: var(--text) !important;
     line-height: 1.6;
     scroll-behavior: smooth;
-    font-size: 1.5rem; /* Base font <1rem */
+    font-size: 1.2rem; /* Base font <1rem */
 }
 
 /* Force text colors */
@@ -64,14 +64,14 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
 .navbar-brand {
     color: var(--primary) !important;
     font-weight: 800;
-    font-size: 1.5rem !important; /* <1.3rem */
+    font-size: 1.2rem !important; /* <1.3rem */
 }
 
 .nav-link {
     color: var(--text) !important;
     margin: 0 0.75rem;
     font-weight: 500;
-    font-size: 1.5rem !important; /* <1rem */
+    font-size: 1.2rem !important; /* <1rem */
     position: relative;
     transition: all 0.3s ease;
 }
@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
 }
 
 .hero-text h1 {
-    font-size: 2.8rem !important;
+    font-size: 2.0rem !important;
     font-weight: 800;
     margin-bottom: 1rem;
     background: linear-gradient(135deg, var(--primary), #facc15);
@@ -136,13 +136,13 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
 }
 
 .subtitle {
-    font-size: 1.5rem !important; /* <1.2rem */
+    font-size: 1.2rem !important; /* <1.2rem */
     color: var(--muted);
     margin-bottom: 1.2rem;
 }
 
 .hero-text p { 
-    font-size: 1.5rem !important; /* <1rem */
+    font-size: 1.2rem !important; /* <1rem */
     color: var(--muted); 
     margin-bottom: 2rem;
     line-height: 1.7;
@@ -187,7 +187,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
     padding: 12px 28px !important;
     border-radius: 50px !important;
     font-weight: 600 !important;
-    font-size: 1.5rem !important; /* <1rem */
+    font-size: 1.2rem !important; /* <1rem */
     text-decoration: none !important;
     transition: all 0.3s ease !important;
     height: 48px !important;
@@ -231,7 +231,7 @@ section {
 }
 
 .section-title {
-    font-size: 2.0rem !important; 
+    font-size: 1.5rem !important; 
     font-weight: 800;
     text-align: center;
     margin-bottom: 3rem;
@@ -300,13 +300,13 @@ section {
 }
 
 .skill-card i {
-    font-size: 2.0rem;
+    font-size: 1.5rem;
     color: var(--primary);
     margin-bottom: 1rem;
 }
 
 .skill-card h5 {
-    font-size: 1.5rem !important; /* <1.15rem */
+    font-size: 1.2rem !important; /* <1.15rem */
     margin-bottom: 1rem;
 }
 
@@ -351,12 +351,12 @@ section {
 }
 
 .project-content h5 {
-    font-size: 1.5rem !important; /* <1.15rem */
+    font-size: 1.2rem !important; 
     margin-bottom: 0.8rem;
 }
 
 .project-content p {
-    font-size: 1.25rem !important; /* <0.92rem */
+    font-size: 1.2rem !important;
     margin-bottom: 1rem;
 }
 
@@ -384,7 +384,7 @@ section {
 }
 
 .cert-card h3 {
-    font-size: 1.5rem !important;
+    font-size: 1.rem !important;
     margin-bottom: 1rem;
 }
 
@@ -402,7 +402,7 @@ section {
     color: var(--primary) !important;
     border-radius: 50px !important;
     font-weight: 600 !important;
-    font-size: 1.5rem !important; 
+    font-size: 1.2rem !important; 
     text-decoration: none !important;
     margin-top: 1rem !important;
     transition: all 0.4s ease !important;
@@ -437,7 +437,7 @@ textarea {
     color: #ffffff !important;
     border-radius: 12px !important;
     padding: 0.9rem 1.1rem !important;
-    font-size: 1.5rem !important;
+    font-size: 1.2rem !important;
     height: 52px !important;
 }
 
@@ -470,7 +470,7 @@ textarea.form-control-dark {
     padding: 0.9rem 1.8rem !important;
     border-radius: 12px !important;
     width: 100% !important;
-    font-size: 1.5rem !important;
+    font-size: 1.2rem !important;
 }
 
 /* ======================================
@@ -499,7 +499,7 @@ footer {
     align-items: center;
     justify-content: center;
     color: var(--text);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     transition: all 0.4s ease;
     animation: pulse 2s infinite;
 }

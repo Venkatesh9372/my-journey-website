@@ -177,7 +177,11 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
         0 8px 25px rgba(212, 175, 55, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
-
+.btn-gold-outline {
+    background: transparent !important;
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
 .btn-primary-custom {
     background: linear-gradient(135deg, var(--primary), #facc15);
     color: #000;

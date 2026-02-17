@@ -74,50 +74,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ✅ Initialize EmailJS
-  emailjs.init("H9M-u9_E2OCZPDsqp"); // Your Public Key
+ /* ======================================
+   EMAILJS CONTACT FORM (YOUR KEYS ✅)
+====================================== */
+(function() {
+    emailjs.init("H9M-u9_E2OCZPDsqp");
+})();
 
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
-  const submitBtn = form.querySelector("button[type='submit']");
-
-  if (!form) return;
-
-  form.addEventListener("submit", function (e) {
+document.getElementById("contact-form")?.addEventListener("submit", function(e) {
     e.preventDefault();
-
-    // Prevent multiple clicks
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending...";
-    status.textContent = "";
+    const form = this;
     
-    emailjs.sendForm(
-      "service_93ptkeb",      // Your Service ID
-      "template_a4991zd",     // ✅ ADMIN TEMPLATE ONLY
-      this
-    )
-    .then(() => {
-
-      status.textContent = "✅ Message sent successfully! I'll reply within 24 hours.";
-      status.style.color = "#22c55e";
-
-      form.reset();
-
-    })
-    .catch((error) => {
-
-      console.error("EmailJS Error:", error);
-
-      status.textContent = "❌ Failed to send message. Please try again.";
-      status.style.color = "#ef4444";
-
-    })
-    .finally(() => {
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Send Message";
-    });
-  });
-});
+    // Send to admin
+    emailjs.sendForm("service_93ptkeb", "template_a4991zd", form)
+        .then(() => {
+            // Auto-reply to user
+            emailjs.sendForm("service_93ptkeb", "template_n7ii29b", form)
+                .then(() => {
+                    showToast("Message sent successfully! 🎉 I'll reply within 24 hours.");
+                    form.reset();
+                });
+        })
+        .catch((error) => {
+            console.error("EmailJS Error:", error);
+            showToast("Failed to send message. Try emailing me directly!", true);
+        });
+};
 
 
 /* ======================================

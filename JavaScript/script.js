@@ -69,47 +69,87 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* ======================================
-   EMAILJS CONTACT FORM (YOUR KEYS ✅)
+   EMAILJS CONTACT FORM
 ====================================== */
-(function() {
-    emailjs.init("dIk0at32YBhuAHexW");
-})();
 
-document.getElementById("contact-form")?.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const form = this;
-    
-    // Send to admin
-    emailjs.sendForm("service_93ptkeb", "template_a4991zd", form)
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Initialize EmailJS
+    emailjs.init("dIk0at32YBhuAHexW");
+
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const button = form.querySelector("button[type='submit']");
+        button.disabled = true;
+        button.innerText = "Sending...";
+
+        // Send to Admin
+        emailjs.sendForm(
+            "service_93ptkeb",
+            "template_a4991zd",
+            form
+        )
         .then(() => {
-            // Auto-reply to user
-            emailjs.sendForm("service_93ptkeb", "template_n7ii29b", form)
-                .then(() => {
-                    showToast("Message sent successfully! 🎉 I'll reply within 24 hours.");
-                    form.reset();
-                });
+
+            // Send Auto Reply (won't break main flow if it fails)
+            emailjs.sendForm(
+                "service_93ptkeb",
+                "template_n7ii29b",
+                form
+            ).catch(err => {
+                console.log("Auto-reply failed:", err);
+            });
+
+            showToast("Message sent successfully! 🎉 I'll reply within 24 hours.");
+            form.reset();
         })
         .catch((error) => {
             console.error("EmailJS Error:", error);
-            showToast("Failed to send message. Try emailing me directly!", true);
+            showToast("Failed to send message. Please try again.", true);
+        })
+        .finally(() => {
+            button.disabled = false;
+            button.innerText = "Send Message";
         });
-}
+
+    });
+
+});
+
 
 /* ======================================
-   TOAST NOTIFICATIONS
+   SIMPLE TOAST FUNCTION
 ====================================== */
+
 function showToast(message, isError = false) {
-    const toast = document.createElement("div");
-    toast.className = `toast ${isError ? "error" : ""}`;
-    toast.textContent = message;
+
+    let toast = document.createElement("div");
+    toast.innerText = message;
+
+    toast.style.position = "fixed";
+    toast.style.bottom = "20px";
+    toast.style.right = "20px";
+    toast.style.padding = "12px 18px";
+    toast.style.borderRadius = "6px";
+    toast.style.color = "#fff";
+    toast.style.fontSize = "14px";
+    toast.style.zIndex = "9999";
+    toast.style.backgroundColor = isError ? "#ef4444" : "#22c55e";
+    toast.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
+
     document.body.appendChild(toast);
 
-    setTimeout(() => toast.classList.add("show"), 150);
     setTimeout(() => {
-        toast.classList.remove("show");
-        setTimeout(() => toast.remove(), 400);
-    }, 3500);
+        toast.remove();
+    }, 4000);
 }
+
 
 /* ======================================
    SMOOTH SCROLLING FOR ANCHOR LINKS

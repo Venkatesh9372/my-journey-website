@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener("DOMContentLoaded", function () {
 
   emailjs.init({
-    publicKey: "H9M-u9_E2OCZPDsqp",
+    publicKey: "dIk0at32YBhuAHexW",
   });
 
   const form = document.getElementById("contact-form");

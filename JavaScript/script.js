@@ -68,12 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-/* =========================================
-   EMAILJS CONTACT FORM (CLEAN VERSION)
-========================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
  /* ======================================
    EMAILJS CONTACT FORM (YOUR KEYS ✅)
 ====================================== */

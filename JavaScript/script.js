@@ -69,50 +69,31 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* ======================================
-   EMAILJS CONTACT FORM (FIXED VERSION)
+   EMAILJS CONTACT FORM (YOUR KEYS ✅)
 ====================================== */
+(function() {
+    emailjs.init("dIk0at32YBhuAHexW");
+})();
 
-document.addEventListener("DOMContentLoaded", function () {
-
-  emailjs.init({
-    publicKey: "dIk0at32YBhuAHexW",
-  });
-
-  const form = document.getElementById("contact-form");
-
-  if (!form) return;
-
-  form.addEventListener("submit", function (e) {
+document.getElementById("contact-form")?.addEventListener("submit", function(e) {
     e.preventDefault();
-
-    const submitBtn = form.querySelector("button[type='submit']");
-    submitBtn.disabled = true;
-    submitBtn.innerText = "Sending...";
-
+    const form = this;
+    
     // Send to admin
     emailjs.sendForm("service_93ptkeb", "template_a4991zd", form)
-      .then(() => {
-
-        // Auto reply to user
-        return emailjs.sendForm("service_93ptkeb", "template_n7ii29b", form);
-
-      })
-      .then(() => {
-        alert("Message sent successfully! 🎉");
-        form.reset();
-      })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
-        alert("Failed to send message. Check console.");
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerText = "Send Message";
-      });
-
-  });
-
-});
+        .then(() => {
+            // Auto-reply to user
+            emailjs.sendForm("service_93ptkeb", "template_n7ii29b", form)
+                .then(() => {
+                    showToast("Message sent successfully! 🎉 I'll reply within 24 hours.");
+                    form.reset();
+                });
+        })
+        .catch((error) => {
+            console.error("EmailJS Error:", error);
+            showToast("Failed to send message. Try emailing me directly!", true);
+        });
+}
 
 /* ======================================
    TOAST NOTIFICATIONS

@@ -64,14 +64,14 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
 .navbar-brand {
     color: var(--primary) !important;
     font-weight: 800;
-    font-size: 1rem !important; 
+    font-size: 1.05rem !important; 
 }
 
 .nav-link {
     color: var(--text) !important;
     margin: 0 0.75rem;
     font-weight: 500;
-    font-size: 1rem !important; 
+    font-size: 1.05rem !important; 
     position: relative;
     transition: all 0.3s ease;
 }

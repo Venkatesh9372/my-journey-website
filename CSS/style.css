@@ -227,14 +227,14 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
 /* ==============================
    SOLID STYLE 
 ============================== */
-
 .btn-gold-solid {
-    background: linear-gradient(135deg, #1a1a1a, #2c2c2c) !important;
+    background: transparent !important;   
     color: #fff !important;
+    border: 2px solid #ffffff40 !important;
 }
 
 .btn-gold-solid:hover {
-    background: linear-gradient(135deg, #2c2c2c, #1a1a1a) !important;
+    background: #222 !important;  
     transform: translateY(-3px) scale(1.05) !important;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
 }

@@ -181,50 +181,63 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
 }
 
 /* ======================================
-   CIRCULAR BUTTONS 
+   CIRCULAR BUTTONS (NO YELLOW BG)
 ====================================== */
-.btn-hero, .view-btn, .btn-primary-custom, .btn-secondary-custom {
+
+.btn-hero, 
+.view-btn, 
+.btn-primary-custom, 
+.btn-secondary-custom {
     padding: 14px 20px !important;
-    border-radius: 50px !important; 
+    border-radius: 50px !important;
     font-weight: 600 !important;
-    font-size: 1rem !important; 
+    font-size: 1rem !important;
     text-decoration: none !important;
     transition: all 0.3s ease !important;
     height: 52px !important;
-    width: auto !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3) !important;
-    border: 2px solid transparent !important;
-    text-align: center !important;
     min-width: 140px !important;
+    border: 2px solid #ffffff20 !important;
+
+    /* NEW DARK STYLE */
+    background: #111 !important;
+    color: #fff !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
 }
+
+
+/* ==============================
+   OUTLINE STYLE
+============================== */
 
 .btn-gold-outline {
     background: transparent !important;
-    color: var(--primary) !important;
-    border-color: var(--primary) !important;
+    color: #fff !important;
+    border: 2px solid #ffffff40 !important;
 }
 
 .btn-gold-outline:hover {
-    background: var(--primary) !important;
-    color: #000 !important;
+    background: #222 !important;
     transform: translateY(-3px) scale(1.05) !important;
-    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.5) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
 }
 
+/* ==============================
+   SOLID STYLE 
+============================== */
+
 .btn-gold-solid {
-    background: linear-gradient(135deg, var(--primary), #facc15) !important;
-    color: #000 !important;
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c) !important;
+    color: #fff !important;
 }
 
 .btn-gold-solid:hover {
-    background: linear-gradient(135deg, #facc15, var(--primary)) !important;
+    background: linear-gradient(135deg, #2c2c2c, #1a1a1a) !important;
     transform: translateY(-3px) scale(1.05) !important;
-    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.5) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
 }
-
 /* ======================================
    SECTIONS & ANIMATIONS
 ====================================== */
@@ -362,26 +375,7 @@ section {
     font-size: 1rem !important;
     margin-bottom: 1rem;
 }
-/* ==============================
-   VIEW BUTTON (Glow Style)
-============================== */
 
-.view-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 30px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: 600;
-  color: white;
-  background: linear-gradient(45deg, #facc15, #f97316);
-  transition: 0.3s ease;
-}
-
-.view-btn:hover {
-  box-shadow: 0 0 20px rgba(250, 204, 21, 0.7);
-  transform: scale(1.05);
-}
 /* ======================================
    CERTIFICATES 
 ====================================== */

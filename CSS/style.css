@@ -362,7 +362,26 @@ section {
     font-size: 1rem !important;
     margin-bottom: 1rem;
 }
+/* ==============================
+   VIEW BUTTON (Glow Style)
+============================== */
 
+.view-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(45deg, #facc15, #f97316);
+  transition: 0.3s ease;
+}
+
+.view-btn:hover {
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.7);
+  transform: scale(1.05);
+}
 /* ======================================
    CERTIFICATES 
 ====================================== */

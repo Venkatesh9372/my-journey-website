@@ -346,6 +346,8 @@ section {
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: visible;
 }
 
 .project-card:hover {
@@ -361,10 +363,8 @@ section {
     display: block;
 }
 
-.project-card:hover img { transform: scale(1.03); }
-
-.project-card {
-    position: relative;
+.project-card:hover img { 
+   transform: scale(1.03);
 }
 
 .project-content {

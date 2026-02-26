@@ -384,7 +384,16 @@ section {
     font-size: 1rem !important;
     margin-bottom: 1rem;
 }
+.view-btn {
+    position: relative;
+    z-index: 999;
+    pointer-events: auto;
+}
 
+.project-card::before,
+.project-card::after {
+    pointer-events: none;
+}
 /* ======================================
    CERTIFICATES 
 ====================================== */

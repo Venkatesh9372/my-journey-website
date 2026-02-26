@@ -201,7 +201,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a { color: var(--text) !important; }
 
     min-width: 140px !important;
     border: 2px solid #ffffff20 !important;
-
+    cursor: pointer;
     background: #111 !important;
     color: #fff !important;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;

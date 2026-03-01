@@ -332,8 +332,9 @@ section {
 }
 
 /* ======================================
-   PROJECTS GRID 
+   PROJECTS GRID
 ====================================== */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -342,59 +343,91 @@ section {
     margin: 0 auto;
 }
 
+/* ================= CARD ================= */
+
 .project-card {
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
-    overflow: visible;
+    border-radius: 20px;
+    overflow: hidden; /* IMPORTANT */
+    background: #111;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    z-index: 1;
 }
 
 .project-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 30px 60px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 30px 60px rgba(212, 175, 55, 0.25);
 }
+
+/* ================= IMAGE ================= */
 
 .project-card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    pointer-events: none;
-    transition: transform 0.4s ease;
     display: block;
+    transition: transform 0.4s ease;
 }
 
-.project-card:hover img { 
-   transform: scale(1.03);
+.project-card:hover img {
+    transform: scale(1.05);
 }
 
-.project-content {
-    position: relative;
-    z-index: 2;
-}
+/* ================= CONTENT ================= */
+
 .project-content {
     padding: 1.8rem;
+    position: relative;
+    z-index: 2; /* keeps content above image */
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-content h5 {
-    font-size: 1rem !important; 
+    font-size: 1rem;
     margin-bottom: 0.8rem;
+    color: #fff;
 }
 
 .project-content p {
-    font-size: 1rem !important;
+    font-size: 0.95rem;
     margin-bottom: 1rem;
+    color: #ccc;
 }
+
+/* ================= BUTTON ================= */
+
 .view-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 40px;
+    background: #000;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
     position: relative;
-    z-index: 999;
-    pointer-events: auto;
+    z-index: 5; /* ensures clickability */
 }
+
+.view-btn:hover {
+    background: #d4af37;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* ================= SAFETY FIX ================= */
 
 .project-card::before,
 .project-card::after {
     pointer-events: none;
 }
+
 /* ======================================
    CERTIFICATES 
 ====================================== */

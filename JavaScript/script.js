@@ -50,22 +50,22 @@ window.addEventListener("scroll", () => {
     }
 });
 
-/* Replace certificate handler with this */
 document.addEventListener('DOMContentLoaded', function() {
-    // Certificate buttons - Direct link open
-    document.querySelectorAll('.view-btn').forEach((btn, index) => {
+
+    document.querySelectorAll('.view-btn').forEach((btn) => {
         btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
+
             const href = this.getAttribute('href');
-            console.log('Opening PDF:', href); // Debug
-            
+
+            // Only handle PDFs manually
             if (href && href.includes('.pdf')) {
+                e.preventDefault();
                 window.open(href, '_blank', 'noopener,noreferrer');
             }
+
         });
     });
+
 });
 
 /* ======================================

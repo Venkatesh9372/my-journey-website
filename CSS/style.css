@@ -11,7 +11,21 @@
     --border: #2a2a2e;
 }
 
-* { 
+body {
+  overflow-x: hidden;
+}
+
+.hero-section,
+.navbar {
+  pointer-events: auto;
+}
+
+.hero-section::before,
+.hero-section::after {
+  pointer-events: none;
+}
+
+ { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 

@@ -115,8 +115,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-image-wrapper {
-    width: 210px;      
-    height: 210px;         
+    width: 200px;      
+    height: 200px;         
     border-radius: 50%;
     overflow: hidden;
     border: 6px solid #9CA3AF;   

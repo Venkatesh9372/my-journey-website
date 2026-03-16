@@ -105,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .subtitle {
     font-size: 1.25rem;
-    color: var(--muted);
+    color: #000000;
     margin-bottom: 1.2rem;
 }
 
@@ -114,14 +114,19 @@ h1, h2, h3, h4, h5, h6 {
     color: #000000;
     margin-bottom: 2rem;
 }
+.hero-section .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .hero-image-wrapper {
-    width: 200px !important;
-    height: 200px !important;
+    width: 170px;          /* smaller image */
+    height: 170px;
     border-radius: 50%;
     overflow: hidden;
-    border: 6px solid #9CA3AF !important; 
-    margin: 0 auto;
-    flex-shrink: 0;
+    border: 6px solid #9CA3AF;
+    margin-left: auto;     /* pushes image to right */
 }
 
 .hero-image-wrapper img {

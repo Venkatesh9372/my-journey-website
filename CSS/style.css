@@ -152,6 +152,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     border: 6px solid #9CA3AF;
     margin-left: auto;
+    margin-right: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
-    box-shadow: 0 8px 20px rgba(37,99,235,0.25);
+    box-shadow: 0 10px 25px rgba(37,99,235,0.3);
 }
 
 .btn-primary-custom:hover {
@@ -229,6 +230,7 @@ h1, h2, h3, h4, h5, h6 {
 ====================================== */
 section {
     padding: 100px 20px;
+   border-bottom: 1px solid #e5e7eb;
 }
 
 .section-title {
@@ -319,6 +321,9 @@ section:nth-child(even) {
 
 .project-content p {
     color: var(--muted);
+}
+.project-card:hover {
+    transform: translateY(-10px);
 }
 
 /* ======================================

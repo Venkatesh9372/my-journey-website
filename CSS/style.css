@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* SUBTITLE */
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #374151;
     margin-bottom: 15px;
@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* PARAGRAPH */
 .hero-text p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #000000;
     line-height: 1.7;
     margin-bottom: 20px;
@@ -146,8 +146,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* RIGHT IMAGE */
 .hero-image-wrapper {
-    width: 200px;
-    height: 200px;
+    width: 260px;  
+    height: 260px; 
     border-radius: 50%;
     overflow: hidden;
     border: 6px solid #9CA3AF;
@@ -156,7 +156,6 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
 }
-
 .hero-image-wrapper img {
     width: 100%;
     height: 100%;
@@ -173,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-image-wrapper {
-        margin: 30px auto 0;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
 
     .hero-text {
